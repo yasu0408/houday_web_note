@@ -1,5 +1,9 @@
+<%= link_to "ホーム", root_path %>
 <% if user_signed_in? %>
-  <%= link_to "アカウント編集", edit_user_registration_path %>
+  <%= link_to "受付" %>
+  <%= link_to "連絡帳" %>
+  <%= link_to "月間予定" %>
+  <%= link_to "今日の利用状況" %>
   <%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: {confirm: "ログアウトしますか？"} %>
   <%= "【ログイン中のアドレス】#{current_user.email}" %>
 <% else %>
