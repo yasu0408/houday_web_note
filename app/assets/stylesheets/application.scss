@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+ .mw-md {
+   max-width: 576px;
+ }
+
+ .mw-xl {
+   max-width: 1200px;
+ }
+ 
+ @import "bootstrap/scss/bootstrap";
