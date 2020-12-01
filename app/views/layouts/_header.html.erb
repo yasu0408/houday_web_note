@@ -1,13 +1,15 @@
-<%= link_to "ホーム", root_path %>
-<% if user_signed_in? %>
-  <%= link_to "受付" %>
-  <%= link_to "連絡帳" %>
-  <%= link_to "月間予定" %>
-  <%= link_to "今日の利用状況" %>
-  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: {confirm: "ログアウトしますか？"} %>
-  <%= "【ログイン中のアドレス】#{current_user.email}" %>
-<% else %>
-  <%= link_to "新規登録", new_user_registration_path %>
-  <%= link_to "ログイン", new_user_session_path %>
-  <%= link_to 'ゲストログイン(閲覧用)', users_guest_sign_in_path, method: :post %>
-<% end %>
+<header>
+  <%= link_to "ホーム", root_path %>
+  <% if user_signed_in? %>
+    <%= link_to "受付" %>
+    <%= link_to "連絡帳" %>
+    <%= link_to "月間予定" %>
+    <%= link_to "今日の利用状況" %>
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: {confirm: "ログアウトしますか？"} %>
+    <%= "【ログイン中のアドレス】#{current_user.email}" %>
+  <% else %>
+    <%= link_to "新規登録", new_user_registration_path %>
+    <%= link_to "ログイン", new_user_session_path %>
+    <%= link_to 'ゲストログイン(閲覧用)', users_guest_sign_in_path, method: :post %>
+  <% end %>
+</header>
