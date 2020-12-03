@@ -5,7 +5,6 @@ class CreateReceptions < ActiveRecord::Migration[6.0]
       t.date :date, null: false
       t.time :arrive, null: false
       t.time :leave
-
       t.timestamps
     end
   end

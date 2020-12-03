@@ -1,7 +1,11 @@
 <p>うけつけ</p>
-<div>
+<% if @reception.nil? %>
+  <p>OK</p>
+<% elsif @reception.leave.nil? %>
   <%= @reception.arrive %>
-</div>
-<div>
+  <p>OK</p>
+<% else %>
+  <%= @reception.arrive %>
   <%= @reception.leave %>
-</div>
+  <p>OK</p>
+<% end %>

@@ -3,7 +3,6 @@ class ReceptionsController < ApplicationController
 
   def show
     range = Date.today.beginning_of_day..Date.today.end_of_day
-    # if current_user.receptions.where(arrive)
     @reception = current_user.receptions.find_by(arrive: range)
   end
 
@@ -11,8 +10,8 @@ class ReceptionsController < ApplicationController
   end
 
   def destroy
-    @reception.destroy!
-    redirect_to receptions_path
+    # @reception.destroy!
+    # redirect_to receptions_path
   end
 
   # private
