@@ -1,7 +1,22 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+NAME = "test"
+EMAIL = "test@example.com"
+PASSWORD = "password"
+
+User.destroy_all
+# Reception.destroy_all
+
+user1 = User.create!(name: "太郎", email: "tarou@example.com", password: "password")
+user2 = User.create!(name: "次郎", email: "jirou@example.com", password: "password")
+user3 = User.create!(name: "三郎", email: "saburou@example.com", password: "password")
+
+# require "Time"
+# require "Date"
+
+user1.receptions.create!(arrive: Time.new(2020, 12, 2, 15, 30), leave: Time.new(2020, 12, 2, 17, 10), user_id: user1.id)
+user2.receptions.create!(arrive: Time.new(2020, 12, 1, 16, 30), leave: Time.new(2020, 9, 7, 18, 5), user_id: user2.id)
+user2.receptions.create!(arrive: Time.current, user_id: user2.id)
+user3.receptions.create!(arrive: Time.new(2020, 9, 11, 15, 20), leave: Time.new(2020, 9, 11, 18, 00), user_id: user3.id)
+user3.receptions.create!(arrive: Time.current, leave: Time.current, user_id: user3.id)
+
+User.create!(name: NAME, email: EMAIL, password: PASSWORD)
+puts "初期データの投入に成功しました！"

@@ -1,0 +1,21 @@
+<section class="card border-dark mt-5" >
+  <div class="card-header">
+    <h4>なまえ：<%= current_user.name %></h4>
+  </div>
+  <div class="card-body">
+    <p class="card-text">きたじかん：
+      <%= l @reception.arrive if @reception.present? %>
+    </p>
+  </div>
+  <div class="card-body">
+    <p class="card-text">かえるじかん：
+      <%= l @reception.leave if @reception.present? && @reception.leave.present? %>
+    </p>
+  </div>
+</section>
+<%= link_to "もどる", root_path, class: 'btn btn-primary mt-3 btn-block' %>
+<% if @reception.nil? %>
+  <%= link_to 'ついたよ', receptions_path, method: :patch, class: 'btn btn-success mt-3 btn-block', remote: true %>
+<% elsif @reception.leave.nil? %>
+  <%= link_to 'かえるよ', receptions_path, method: :patch, class: 'btn btn-success mt-3 btn-block', remote: true %>
+<% end %>
