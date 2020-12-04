@@ -1,8 +1,18 @@
 <% if @reception.nil? %>
-  <%# <button id="present-time">ついたよ</button> %>
-  <%= link_to 'ついたよ', receptions_path, method: :patch, remote: true %>
+  <section class="card border-dark mt-5" >
+    <div class="card-header">
+      <h4>なまえ：<%= current_user.name %></h4>
+    </div>
+    <div class="card-body">
+      <p class="card-text">きたじかん：</p>
+    </div>
+    <div class="card-body">
+      <p class="card-text">かえるじかん：</p>
+    </div>
+  </section>
+  <%= link_to "もどる", root_path, class: 'btn btn-primary mt-3 btn-block' %>
+  <%= link_to 'ついたよ', receptions_path, method: :patch, remote: true, class: 'btn btn-success mt-3 btn-block' %>
 <% else %>
-  <%= link_to 'かえるよ', receptions_path, method: :patch, remote: true if @reception.nil? || @reception.leave.nil? %>
   <section class="card border-dark mt-5" >
     <div class="card-header">
       <h4>なまえ：<%= current_user.name %></h4>
@@ -17,4 +27,5 @@
     </div>
   </section>
   <%= link_to "もどる", root_path, class: 'btn btn-primary mt-3 btn-block' %>
+  <%= link_to 'かえるよ', receptions_path, method: :patch, class: 'btn btn-success mt-3 btn-block', remote: true if @reception.nil? || @reception.leave.nil? %>
 <% end %>
