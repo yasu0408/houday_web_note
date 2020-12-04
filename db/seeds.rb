@@ -12,10 +12,6 @@ user3 = User.create!(name: "三郎", email: "saburou@example.com", password: "pa
 # require "Time"
 # require "Date"
 
-# Reception.create!(arrive: Time.new(2020, 9, 2, 15, 30), leave: Time.new(2020, 9, 2, 17, 10), user_id: user1.id)
-# Reception.create!(arrive: Time.new(2020, 9, 3, 15, 30), leave: Time.new(2020, 9, 3, 17, 15), user_id: user2.id)
-# Reception.create!(arrive: Time.new(2020, 9, 7, 15, 00), leave: "", user_id: user2.id)
-
 user1.receptions.create!(arrive: Time.new(2020, 12, 2, 15, 30), leave: Time.new(2020, 12, 2, 17, 10), user_id: user1.id)
 user2.receptions.create!(arrive: Time.new(2020, 12, 1, 16, 30), leave: Time.new(2020, 9, 7, 18, 5), user_id: user2.id)
 user2.receptions.create!(arrive: Time.current, user_id: user2.id)

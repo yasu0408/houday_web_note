@@ -1,11 +1,4 @@
-<p>うけつけ</p>
-<% if @reception.nil? %>
-  <p>OK</p>
-<% elsif @reception.leave.nil? %>
-  <%= @reception.arrive %>
-  <p>OK</p>
-<% else %>
-  <%= @reception.arrive %>
-  <%= @reception.leave %>
-  <p>OK</p>
-<% end %>
+<h1 class="text-center">うけつけじかん</h1>
+<div id="card-reception">
+  <%= render "reception_card" %>
+</div>
