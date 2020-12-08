@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_03_015832) do
+ActiveRecord::Schema.define(version: 2020_12_04_090740) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "notes", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.date "date", null: false
+    t.string "condition", null: false
+    t.string "humor", null: false
+    t.float "temp", null: false
+    t.text "message"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id", "date"], name: "index_notes_on_user_id_and_date", unique: true
+    t.index ["user_id"], name: "index_notes_on_user_id"
+  end
 
   create_table "receptions", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -37,5 +50,6 @@ ActiveRecord::Schema.define(version: 2020_12_03_015832) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "notes", "users"
   add_foreign_key "receptions", "users"
 end

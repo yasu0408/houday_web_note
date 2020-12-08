@@ -1,0 +1,12 @@
+<% if current_user.id == @note.user.id %>
+  <h1 >連絡帳詳細</h1>
+  <p>【日付】 <%= l @note.date %></p>
+  <p>【体調】 <%= @note.condition %></p>
+  <p>【機嫌】 <%= @note.humor %></p>
+  <p>【体温】 <%= @note.temp %></p>
+  <p>【メッセージ】 <%= @note.message %></p>
+  <p><%= link_to "連絡帳編集", edit_note_path(@note) %></p>
+  <p><%= link_to "連絡帳一覧へ", notes_path %></p>
+<% else %>
+  <%= redirect_to root_path %>
+<% end %>

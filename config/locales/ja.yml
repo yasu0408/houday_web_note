@@ -1,6 +1,16 @@
 ---
 ja:
   activerecord:
+    models:
+      note: 連絡帳
+    attributes:
+      note:
+        date: 日付
+        condition: 体調
+        humor: 機嫌
+        temp: 体温
+        message: メッセージ
+        user: ユーザー
     errors:
       messages:
         record_invalid: "バリデーションに失敗しました: %{errors}"
