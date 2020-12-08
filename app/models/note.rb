@@ -5,6 +5,7 @@ class Note < ApplicationRecord
   validates :condition, presence: true, inclusion: { in: CONDITION }
   validates :humor, presence: true, inclusion: { in: HUMOR }
   validates :temp, presence: true
+  validates :date, presence: true
 
   validates :user_id, uniqueness: {
                         scope: :date,

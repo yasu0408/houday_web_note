@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2020_12_04_090740) do
 
   create_table "notes", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.date "date"
+    t.date "date", null: false
     t.string "condition", null: false
     t.string "humor", null: false
     t.float "temp", null: false

@@ -33,6 +33,8 @@ class NotesController < ApplicationController
 
   def set_note
     @note = current_user.notes.find_by(id: params[:id])
-    # redirect_to root_path, alert: "権限がありません"
+    if @note.nil?
+      redirect_to root_path, alert: "権限がありません"
+    end
   end
 end
