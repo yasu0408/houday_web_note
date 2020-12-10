@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2020_12_08_052340) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id", "date"], name: "index_calendars_on_user_id_and_date", unique: true
     t.index ["user_id"], name: "index_calendars_on_user_id"
   end
 
