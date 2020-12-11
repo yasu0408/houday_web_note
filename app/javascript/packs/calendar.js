@@ -15,6 +15,6 @@ document.addEventListener("turbolinks:load", () => {
     ],
     defaultDate: selectedDate,
   }
-  flatpickr('.edit_calendar', config);
+  flatpickr('#edit_calendar', config);
 
 });

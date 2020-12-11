@@ -12,9 +12,23 @@
  .mw-xl {
    max-width: 1200px;
  }
+
+ 
  
  @import "bootstrap/scss/bootstrap";
 
  $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
  @import "@fortawesome/fontawesome-free/scss/fontawesome";
  @import "@fortawesome/fontawesome-free/scss/regular";
+
+.btn-third {
+  	width:33.33333%;
+  	/* 未対応ブラウザ用 */
+  	width:-webkit-calc(100% / 3);
+  	/* ベンダープレフィックス */
+  	width:calc(100% / 3);
+}
+
+header {
+  overflow: hidden;
+}
