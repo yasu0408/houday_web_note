@@ -1,11 +1,8 @@
-const {
-  Japanese
-} = require("flatpickr/dist/l10n/ja");
-
 document.addEventListener("turbolinks:load", () => {
+  flatpickr.localize(flatpickr.l10ns.ja)
+
   const selectedDate = gon.valid_dates
   const config = {
-    locale: Japanese,
     inline: true,
     mode: "multiple",
     minDate: "today",
