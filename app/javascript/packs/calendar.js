@@ -3,7 +3,7 @@ const {
 } = require("flatpickr/dist/l10n/ja");
 
 document.addEventListener("turbolinks:load", () => {
-  const selectedDate = gon.selected_date
+  const selectedDate = gon.valid_dates
   const config = {
     locale: Japanese,
     inline: true,
@@ -18,6 +18,6 @@ document.addEventListener("turbolinks:load", () => {
     ],
     defaultDate: selectedDate,
   }
-  flatpickr('.calendar', config);
+  flatpickr('.edit_calendar', config);
 
 });

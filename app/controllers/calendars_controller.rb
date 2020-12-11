@@ -1,26 +1,29 @@
 class CalendarsController < ApplicationController
+  before_action :set_calendar, only: %i[edit update]
+  DATE_SCOPE = Date.today..(Date.today + 30)
+
   def edit
-    gon.selected_date = current_user.calendars.pluck(:date) if current_user.calendars.present?
+    gon.valid_dates = @scope_db_dates & DATE_SCOPE.to_a
   end
 
   def update
     submitted_dates = params[:calendar][:date].split(" ").map(&:to_date)
-    save_dates = submitted_dates - current_user.calendars.pluck(:date)
+    valid_dates = submitted_dates & DATE_SCOPE.to_a
+
+    save_dates = valid_dates - @scope_db_dates
     list = save_dates.map do |date|
       { user_id: current_user.id, date: date }
     end
-    # list = []
-    # save_dates.each do |save_date|
-    #   hash = { user_id: current_user.id, date: save_date }
-    #   list << hash
+
     Calendar.import!(list)
-
-    # save_dates.each do |save_date|
-    #   current_user.calendars.create!(date: save_date)
-    # end
-
     delete_dates = current_user.calendars.pluck(:date) - submitted_dates
     current_user.calendars.where(date: delete_dates).delete_all
     redirect_to root_path
+  end
+
+  private
+
+  def set_calendar
+    @scope_db_dates = current_user.calendars.where(date: DATE_SCOPE).pluck(:date)
   end
 end

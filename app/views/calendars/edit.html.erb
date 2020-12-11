@@ -1,6 +1,6 @@
 <%= Gon::Base.render_data %>
 <%= form_with url: calendars_path, method: :put, local: true do |form| %>
-  <input class ="calendar" type="text" name="calendar[date]" placeholder="利用日を選んでください" readonly="readonly" >
+  <input class ="edit_calendar" type="text" name="calendar[date]" placeholder="利用日を選んでください" readonly="readonly" >
   <%= form.submit "送信" %>
 </div>
 <% end %>
