@@ -24,5 +24,11 @@ user2.notes.create!(date: Time.current, condition: "わるい", humor: "わる�
 user3.notes.create!(date: Time.new(2020, 9, 11, 9, 30), condition: "よい", humor: "よい", temp: 36.7, message: "サンプル文です")
 user3.notes.create!(date: Time.current, condition: "ふつう", humor: "ふつう", temp: 36.7, message: "サンプル文です")
 
+user1.calendars.create!(date: Date.new(2020, 12, 2))
+user2.calendars.create!(date: Date.new(2020, 12, 1))
+user2.calendars.create!(date: Date.new(2020, 12, 8))
+user3.calendars.create!(date: Date.new(2020, 12, 10))
+user3.calendars.create!(date: Date.new(2020, 12, 12))
+
 User.create!(name: NAME, email: EMAIL, password: PASSWORD)
 puts "初期データの投入に成功しました！"
