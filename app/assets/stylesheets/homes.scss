@@ -1,3 +1,37 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.button-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 20vh;
+  background: grey;
+  color: #fff;
+  padding: 20px;
+  font-size: 22px;
+  background: #FEA993;
+  border: 2px dashed #F7F9CC;
+  border-radius: 10px;
+  box-shadow: 0 0 0 7px #FEA993;
+  
+}
+
+.index-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: clamp(60px, 15vw, 150px);
+  height: clamp(60px,15vw, 150px);
+  font-size: clamp(12px, 3vw, 20px);
+  background-color:#F7F9CC;
+  border-radius: 50%;
+  white-space: nowrap;
+  font-family: 'Hiragino Maru Gothic Pro',
+  'ヒラギノ丸ゴ Pro W4',
+  sans-serif;
+  font-weight: bold;
+  color: #FEA993;
+}
+
