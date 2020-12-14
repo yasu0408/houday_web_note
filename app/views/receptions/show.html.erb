@@ -1,5 +1,10 @@
 <% if current_user.id == @reception.user.id %>
-  <h1 class="font text-center mb-3">今日の利用状況</h1>
+  <div class="d-flex justify-content-center">
+    <div class="stitch font text-center mb-4 w-50">
+      今日の利用状況
+    </div>
+  </div>
+  <%# <h1 class="font text-center mb-3">今日の利用状況</h1> %>
   <table class="osare-table osare-hikaku col4t text-center">
     <thead>
       <tr>
@@ -26,7 +31,9 @@
       </tr>
     </tbody>
   </table>
-  <%= link_to "もどる", root_path, class: "btn btn-block btn-primary mt-3" %>
+  <div class="d-flex justify-content-center">
+    <%= link_to "もどる", root_path, class: "btn btn-block btn-primary mt-3 w-50" %>
+  </div>
 <% else %>
   <%= redirect_to root_path %>
 <% end %>

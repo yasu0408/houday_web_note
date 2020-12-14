@@ -1,6 +1,8 @@
-  
-<h4 class="container text-center font">希望利用日を選択して、<br>
-  送信ボタンをおしてください。</h4>
+<div class="d-flex justify-content-center">
+  <div class="stitch font text-center mb-4 w-50">
+    月間利用日
+  </div>
+</div>
 <div class ="calendar">
   <%= form_with url: calendars_path, method: :put, local: true do |form| %>
     <input id ="edit_calendar" type="text" name="calendar[date]" placeholder="利用日を選んでください" readonly="readonly" >

@@ -1,7 +1,10 @@
-<h1 class="text-center font">連絡帳一覧 </h1>
-<h3 class="font">名前:<%= current_user.name %></h3>
-<div class="my-4">
-  <%= link_to "今日の連絡帳を記入する", new_note_path, class: "btn btn-primary btn-block" %>
+<div class="d-flex justify-content-center">
+  <div class="stitch font text-center mb-4 w-50">
+    連絡帳一覧　名前:<%= current_user.name %>
+  </div>
+</div>
+<div class="my-4 d-flex justify-content-center">
+  <%= link_to "今日の連絡帳を記入する", new_note_path, class: "btn btn-primary btn-block　w-50" %>
 </div>
 <table class="table table-bordered table-striped mt-4">
   <thead class="text-center table-head">
