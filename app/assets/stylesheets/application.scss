@@ -15,6 +15,10 @@
    overflow: hidden;
  }
 
+ .dorpdown-toggler {
+ 	border-color: rgba(0, 0, 0, 0);
+ }
+
  @import "bootstrap/scss/bootstrap";
 
  $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
