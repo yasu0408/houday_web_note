@@ -1,5 +1,8 @@
 class ReceptionsController < ApplicationController
-  before_action :set_reception, only: %i[show update destroy]
+  before_action :set_reception, only: %i[edit show update destroy]
+
+  def edit
+  end
 
   def show
   end

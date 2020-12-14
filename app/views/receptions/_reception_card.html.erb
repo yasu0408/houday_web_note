@@ -1,15 +1,15 @@
 <section class="card border-dark mt-5 font" >
   <div class="card-header">
-    <h4>なまえ：<%= current_user.name %></h4>
+    なまえ：<%= current_user.name %>
   </div>
   <div class="card-body">
     <p class="card-text">きたじかん：
-      <%= l @reception.arrive if @reception.present? %>
+      <%= l @reception.arrive, format: :short if @reception.present? %>
     </p>
   </div>
   <div class="card-body">
     <p class="card-text">かえるじかん：
-      <%= l @reception.leave if @reception.present? && @reception.leave.present? %>
+      <%= l @reception.leave, format: :short if @reception.present? && @reception.leave.present? %>
     </p>
   </div>
 </section>
