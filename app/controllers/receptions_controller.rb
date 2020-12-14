@@ -5,6 +5,9 @@ class ReceptionsController < ApplicationController
   end
 
   def show
+    if @reception.nil?
+      redirect_to root_path, alert: "受付がありません"
+    end
   end
 
   def update

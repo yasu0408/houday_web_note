@@ -1,39 +1,34 @@
-<% if current_user.id == @reception.user.id %>
-  <div class="d-flex justify-content-center">
-    <div class="stitch font text-center mb-4 w-50">
-      今日の利用状況
-    </div>
+<div class="d-flex justify-content-center">
+  <div class="stitch font text-center mb-4 w-50">
+    今日の利用状況
   </div>
-  <%# <h1 class="font text-center mb-3">今日の利用状況</h1> %>
-  <table class="osare-table osare-hikaku col4t text-center">
-    <thead>
-      <tr>
-        <th>日付</th>
-        <th>来所時間</th>
-        <th>退所時間</th>
-        <th>利用の有無</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th><%=l @reception.arrive %></th>
-        <td><%=l @reception.arrive, format: :short %></td>
-        <td><%=l @reception.leave, format: :short %></td>
-        <td>
-          <% if @reception.arrive.present? && @reception.leave.nil? %>
-            現在利用中
-          <% elsif @reception.present? && @reception.leave.present? %>
-            現在送迎中
-          <% else %>
-            利用予定あり
-          <% end %>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <div class="d-flex justify-content-center">
-    <%= link_to "もどる", root_path, class: "btn btn-block btn-primary mt-3 w-50" %>
-  </div>
-<% else %>
-  <%= redirect_to root_path %>
-<% end %>
+</div>
+<table class="osare-table osare-hikaku col4t text-center">
+  <thead>
+    <tr>
+      <th>日付</th>
+      <th>来所時間</th>
+      <th>退所時間</th>
+      <th>利用の有無</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><%=l @reception.arrive %></th>
+      <td><%=l @reception.arrive, format: :short %></td>
+      <td><%=l @reception.leave, format: :short %></td>
+      <td>
+        <% if @reception.arrive.present? && @reception.leave.nil? %>
+          現在利用中
+        <% elsif @reception.present? && @reception.leave.present? %>
+          現在送迎中
+        <% else %>
+          利用予定あり
+        <% end %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="d-flex justify-content-center">
+  <%= link_to "もどる", root_path, class: "btn btn-block btn-primary mt-3 w-50" %>
+</div>
