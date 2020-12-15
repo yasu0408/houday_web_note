@@ -1,7 +1,13 @@
 class ReceptionsController < ApplicationController
-  before_action :set_reception, only: %i[show update destroy]
+  before_action :set_reception, only: %i[edit show update destroy]
+
+  def edit
+  end
 
   def show
+    if @reception.nil?
+      redirect_to root_path, alert: "受付がありません"
+    end
   end
 
   def update

@@ -1,12 +1,36 @@
-<% if current_user.id == @note.user.id %>
-  <h1 >連絡帳詳細</h1>
-  <p>【日付】 <%= l @note.date %></p>
-  <p>【体調】 <%= @note.condition %></p>
-  <p>【機嫌】 <%= @note.humor %></p>
-  <p>【体温】 <%= @note.temp %></p>
-  <p>【メッセージ】 <%= @note.message %></p>
-  <p><%= link_to "連絡帳編集", edit_note_path(@note) %></p>
-  <p><%= link_to "連絡帳一覧へ", notes_path %></p>
-<% else %>
-  <%= redirect_to root_path %>
-<% end %>
+<h1 class="text-center font">連絡帳の詳細</h1>
+<table class="osare-table osare-hikaku col4t text-center">
+  <thead>
+    <tr>
+      <th>日付</th>
+      <th>体調</th>
+      <th>機嫌</th>
+      <th>体温</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><%= l @note.date %></th>
+      <td><%= @note.condition %></td>
+      <td><%= @note.humor %></td>
+      <td><%= @note.temp %></td>
+    </tr>
+  </tbody>
+  <table class="osare-table osare-hikaku col1t text-center mt-3 mb-3">
+    <thead class="message-thead">
+      <tr>
+        <th>メッセージ</th>
+      </tr>
+      <tbody>
+        <tr>
+          <td><%= @note.message %></td>
+        </tr>
+      </tbody>
+    </thead>
+  </table>
+  <div class="d-flex justify-content-center">
+    <%= link_to "連絡帳編集", edit_note_path(@note), class: "btn btn-block btn-success w-50 mb-3" %>
+  </div>
+  <div class="d-flex justify-content-center">
+    <%= link_to "連絡帳一覧へ", notes_path, class: "btn btn-block btn-primary w-50" %>
+  </div>

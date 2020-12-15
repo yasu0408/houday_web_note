@@ -1,13 +1,16 @@
-<h1 class="text-center">名前:<%= current_user.name %> 連絡帳一覧 </h1>
-<div class="d-flex justify-content-center my-4">
-  <%= link_to "今日の連絡帳を記入する", new_note_path, class: "btn btn-primary btn-block" %>
+<div class="d-flex justify-content-center">
+  <div class="stitch font text-center mb-4 w-50">
+    連絡帳一覧　名前:<%= current_user.name %>
+  </div>
+</div>
+<div class="my-4 d-flex justify-content-center">
+  <%= link_to "今日の連絡帳を記入する", new_note_path, class: "btn btn-primary btn-block　w-50" %>
 </div>
 <table class="table table-bordered table-striped mt-4">
-  <thead class="text-nowrap text-center table-head">
+  <thead class="text-center table-head">
     <tr>
-      <th scope="col">インデックス番号</th>
+      <th scope="col">No</th>
       <th scope="col">利用日</th>
-      <th scope="col">更新日</th>
       <th scope="col">確認・変更</th>
     </tr>
   </thead>
@@ -15,17 +18,16 @@
     <% @notes.each.with_index(1) do |note, i| %>
       <tr>
         <th scope="row" class="text-center"><%= i %></th>
-        <td class="break-word text-center text-nowrap"><%= l note.date, format: :long %></td>
-        <td class="break-word text-center text-nowrap"><%= l note.date, format: :long %></td>
+        <td class="break-word text-center "><%= l note.date, format: :short %></td>
         <td class="text-nowrap text-center">
-          <%= link_to note, class: "btn btn-info px-5 mx-3" do %>
-            <i class="fas fa-eye"></i> <span class="d-none d-md-inline"> 確認</span>
+          <%= link_to note, class: "btn btn-info btn-third" do %>
+            <i class="fas fa-eye"></i> <span class="d-none d-md-inline">確認</span>
           <% end %>
-          <%= link_to edit_note_path(note), class: "btn btn-success px-5 ms-3" do %>
-            <i class="fas fa-exchange-alt"></i> <span class="d-none d-md-inline"> 変更</span>
+          <%= link_to edit_note_path(note), class: "btn btn-success btn-third" do %>
+            <i class="fas fa-exchange-alt"></i> <span class="d-none d-md-inline">変更</span>
           <% end %>
-          <%= link_to note, class: "btn btn-danger #{'disabled'} px-5 mx-3" do %>
-            <i class="fas fa-eraser"></i> <span class="d-none d-md-inline"> 削除</span>
+          <%= link_to note, class: "btn btn-danger #{'disabled'} btn-third" do %>
+            <i class="fas fa-eraser"></i> <span class="d-none d-md-inline">削除</span>
           <% end %>
         </td>
       </tr>

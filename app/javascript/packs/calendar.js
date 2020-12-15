@@ -8,6 +8,7 @@ document.addEventListener("turbolinks:load", () => {
     minDate: "today",
     maxDate: new Date().fp_incr(30),
     dateFormat: "Y-m-d",
+
     disable: [
       function (date) {
         return (date.getDay() === 0);
@@ -15,6 +16,6 @@ document.addEventListener("turbolinks:load", () => {
     ],
     defaultDate: selectedDate,
   }
-  flatpickr('.edit_calendar', config);
+  flatpickr('#edit_calendar', config);
 
 });

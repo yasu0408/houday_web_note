@@ -51,7 +51,7 @@ ja:
     formats:
       default: "%Y/%m/%d"
       long: "%Y年%m月%d日(%a)"
-      short: "%m/%d"
+      short: "%y/%m/%d"
     month_names:
       -
       - 1月
@@ -211,7 +211,7 @@ ja:
   time:
     am: 午前
     formats:
-      default: "%Y年%m月%d日(%a) %H時%M分%S秒"
+      default: "%Y/%m/%d"
       long: "%Y/%m/%d %H:%M"
-      short: "%m/%d %H:%M"
+      short: "%H:%M"
     pm: 午後

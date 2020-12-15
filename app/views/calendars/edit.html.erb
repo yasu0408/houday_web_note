@@ -1,6 +1,15 @@
-<%= Gon::Base.render_data %>
-<%= form_with url: calendars_path, method: :put, local: true do |form| %>
-  <input class ="edit_calendar" type="text" name="calendar[date]" placeholder="利用日を選んでください" readonly="readonly" >
-  <%= form.submit "送信" %>
+<div class="d-flex justify-content-center">
+  <div class="stitch font text-center mb-4 w-50">
+    月間利用日
+  </div>
 </div>
-<% end %>
+<div class ="calendar">
+  <%= form_with url: calendars_path, method: :put, local: true do |form| %>
+    <input id ="edit_calendar" type="text" name="calendar[date]" placeholder="利用日を選んでください" readonly="readonly" >
+    <%= form.submit "送信", class: "btn btn-primary btn-block calendar-submit" %>
+  <% end %>
+</div>
+<%# gifファイルの貼り付け %>
+<%# <img src="/assets/sample_play.gif" id="guide-calendar"
+  onclick="this.setAttribute('src', this.getAttribute('src').replace(/assets/_play.gif/g, '.gif'));"
+  style="cursor: pointer;"> %>
