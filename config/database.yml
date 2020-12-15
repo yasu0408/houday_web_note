@@ -81,5 +81,6 @@ test:
 production:
   <<: *default
   database: houday_web_note_production
-  username: houday_web_note
-  password: <%= ENV['HOUDAY_WEB_NOTE_DATABASE_PASSWORD'] %>
+  username: postgres
+  password: <%= Rails.application.credentials.db[:password] %>
+  host: <%= Rails.application.credentials.db[:hostname] %>

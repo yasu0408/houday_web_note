@@ -4,12 +4,16 @@
     <title>HoudayWebNote</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'calendar', 'data-turbolinks-track': 'reload' if controller_name == 'calendars' %>
+    <%= Gon::Base.render_data if controller_name == 'calendars' %>
   </head>
-
   <body>
-    <%= yield %>
+    <%= render "layouts/header" %>
+    <div class="container-fluid py-4 <%= devise_controller? ? 'mw-md' : 'mw-xl' %>">
+      <%= yield %>
+    </div>
   </body>
 </html>
