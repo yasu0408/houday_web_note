@@ -5,7 +5,7 @@
     </div>
     <div class="card-body">
       <p class="card-text">きたじかん：
-        <%= l @reception.arrive, format: :short if @reception.present? %>
+        <%= l @reception&.arrive, format: :short if @reception.present? %>
       </p>
     </div>
     <div class="card-body">

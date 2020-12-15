@@ -16,7 +16,13 @@
     <tr>
       <th><%=l @reception.arrive %></th>
       <td><%=l @reception.arrive, format: :short %></td>
-      <td><%=l @reception.leave, format: :short %></td>
+      <td>
+        <% if @reception.leave.present? %>
+          <%=l @reception.leave, format: :short %>
+        <% else %>
+          ---
+        <% end %>
+      </td>
       <td>
         <% if @reception.arrive.present? && @reception.leave.nil? %>
           現在利用中

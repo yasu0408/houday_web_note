@@ -6,7 +6,7 @@ class NotesController < ApplicationController
   end
 
   def new
-    @note = Note.new
+    @note = Note.new(temp: 36.5, message: "よろしくおねがいします。")
   end
 
   def create
