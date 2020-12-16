@@ -22,7 +22,7 @@
   </div>
   <div class="form-group">
     <%= f.label :message %>
-    <%= f.text_field :message, value: @note.message, class: "form-control" %>
+    <%= f.text_area :message, value: @note.message, class: "form-control", maxlength: "300" %>
     <small id="messageHelp" class="form-text text-muted">おこさまの様子や気になることがあればご記入ください</small>
   </div>
   <div class="d-flex justify-content-center">

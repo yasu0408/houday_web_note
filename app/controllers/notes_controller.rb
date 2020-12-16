@@ -10,8 +10,13 @@ class NotesController < ApplicationController
   end
 
   def create
-    current_user.notes.create!(note_params)
-    redirect_to root_path
+    @note = current_user.notes.new(note_params)
+    if @note.save
+      # current_user.notes.create!(note_params)
+      redirect_to root_path, notice: "投稿しました"
+    else
+      redirect_to root_path, alert: "すでに同日の連絡帳が存在します"
+    end
   end
 
   def show
@@ -22,7 +27,8 @@ class NotesController < ApplicationController
 
   def update
     @note.update!(note_params)
-    redirect_to @note
+    flash[:notice] = "更新しました"
+    redirect_to root_path
   end
 
   private
