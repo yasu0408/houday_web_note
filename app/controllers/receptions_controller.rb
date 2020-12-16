@@ -6,14 +6,14 @@ class ReceptionsController < ApplicationController
 
   def show
     if @reception.nil?
-      redirect_to root_path, alert: "受付がありません"
+      flash[:alert] = "まだ本日の受付がありません"
+      redirect_to root_path
     end
   end
 
   def update
     if @reception.nil?
       @reception = current_user.receptions.create!(arrive: Time.current)
-      # binding.pry
     elsif @reception.leave.nil?
       @reception.update!(leave: Time.current)
     else

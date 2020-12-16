@@ -6,7 +6,7 @@ class Note < ApplicationRecord
   validates :humor, presence: true, inclusion: { in: HUMOR }
   validates :temp, presence: true
   validates :date, presence: true
-
+  validates :message, presence: true, length: { maximum: 300 }
   validates :user_id, uniqueness: {
                         scope: :date,
                         message: "さんは連絡帳を同日に１つしか作ることができません",

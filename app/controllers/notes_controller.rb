@@ -11,6 +11,7 @@ class NotesController < ApplicationController
 
   def create
     current_user.notes.create!(note_params)
+    flash[:notice] = "投稿しました"
     redirect_to root_path
   end
 
@@ -22,7 +23,8 @@ class NotesController < ApplicationController
 
   def update
     @note.update!(note_params)
-    redirect_to @note
+    flash[:notice] = "更新しました"
+    redirect_to root_path
   end
 
   private
