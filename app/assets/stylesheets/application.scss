@@ -1,29 +1,73 @@
 /*
- *= require flatpickr
- *= require flatpickr/dist/themes/material_blue
- *= require_tree .
- *= require_self
- */
- .mw-md {
+*= require flatpickr
+*= require flatpickr/dist/themes/material_blue
+*= require_tree .
+*= require_self
+*/
+@import "bootstrap/scss/bootstrap";
+
+$fa-font-path: '@fortawesome/fontawesome-free/webfonts';
+@import "@fortawesome/fontawesome-free/scss/fontawesome";
+@import "@fortawesome/fontawesome-free/scss/regular";
+
+.mw-md {
    max-width: 576px;
  }
  .mw-xl {
    max-width: 1200px;
  }
 
+// ↓ヘッダーcss
  header {
    overflow: hidden;
  }
 
- .dorpdown-toggler {
+ .logo {
+	 font-size: 20px;
+	 }
+ 
+ .dropdown-toggler {
  	border-color: rgba(0, 0, 0, 0);
  }
 
- @import "bootstrap/scss/bootstrap";
+ .box14 {
+ 	padding: 0.2em 0.5em;
+ 	margin: 1em 0 0.5em 0;
+ 	background: #d6ebff;
+ 	box-shadow: 0px 0px 0px 10px #d6ebff;
+	 border: dashed 2px white;
+ }
 
- $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
- @import "@fortawesome/fontawesome-free/scss/fontawesome";
- @import "@fortawesome/fontawesome-free/scss/regular";
+ .box14 p {
+ 	margin: 0;
+ 	padding: 0;
+ }
+
+ #nav {
+ 	list-style: none;
+	 display: flex;
+	 padding: 0 0 12px 0;
+	 justify-content: center;
+	 align-items: center;
+ }
+
+ #nav li {
+ 	width: 140px;
+ 	text-align: center;
+ 	height: 50px;
+ 	line-height: 50px;
+ 	margin-right: 2px;
+ }
+
+ #nav li a {
+	 white-space: nowrap;
+ 	text-decoration: none;
+ 	color:black;
+ 	font-weight: bold;
+	 padding:20px;
+ }
+//  ↑ここまでヘッダー
+
 
 // 連絡帳のindexページのボタン
 .btn-third {
@@ -34,6 +78,7 @@
   	width:calc(100% / 3);
 }
 
+// フラッシュ設定
 .alert-notice {
 	@extend .alert-success;
 }
@@ -41,7 +86,4 @@
 .alert-alert {
 	@extend .alert-danger;
 }
-
-
-
 
