@@ -1,5 +1,5 @@
 class ReceptionsController < ApplicationController
-  before_action :set_reception, only: %i[edit show update destroy]
+  before_action :set_reception, only: %i[edit show update]
 
   def edit
   end
@@ -17,14 +17,14 @@ class ReceptionsController < ApplicationController
     elsif @reception.leave.nil?
       @reception.update!(leave: Time.current)
     else
-      redirect_to receptions_path
+      redirect_to receptions_path, notice: "受付完了しました"
     end
   end
 
-  def destroy
-    # @reception.destroy!
-    # redirect_to receptions_path
-  end
+  # def destroy
+  # @reception.destroy!
+  # redirect_to receptions_path, notice: "削除に成功しました"
+  # end
 
   private
 
