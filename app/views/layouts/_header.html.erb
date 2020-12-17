@@ -1,41 +1,33 @@
 <header>
-  <div class="logo d-flex justify-content-center align-items-center pt-3 font">
-    <%= link_to '放課後等デイサービス専用アプリ Houday Web Note', root_path, class:'text-center text-dark' %>
+  <div class="stitch-blue d-flex justify-content-center align-items-center pt-3 font">
+    <%= link_to '放課後等デイサービス専用アプリ Houday Web Note', root_path, class:'text-center text-dark pb-3' %>
   </div>
-  <div class="box14 font">
-    <% if user_signed_in? %>
-      <ul id="nav">
-        <li>
-          <%= link_to "受付",edit_receptions_path, class:'nav-link' %>
-        </li>
-        <li>
-          <%= link_to "連絡帳",notes_path, class:'nav-link' %>
-        </li>
-        <li>
-          <%= link_to "月間予定",edit_calendars_path, class:'nav-link' %>
-        </li>
-        <li>
-          <%= link_to "今日の利用状況",receptions_path, class:'nav-link' %>
-        </li>
-        <li>
-          <%= link_to 'アカウント編集', edit_user_registration_path, class:'nav-link' %>
-        </li>
-        <li>
-          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:'nav-link', data: {confirm: "ログアウトしますか？"} %>
-        </li>
-      </ul>
-    <% else %>
-      <ul id="nav">
-        <li>
-          <%= link_to "新規登録", new_user_registration_path, class:'nav-link' %>
-        </li>
-        <li>
-          <%= link_to "ログイン", new_user_session_path, class:'nav-link' %>
-        </li>
-        <li>
-          <%= link_to 'ゲストログイン(閲覧用)', users_guest_sign_in_path, method: :post, class:'nav-link' %>
-        </li>
-      </ul>
-    <% end %>
-  </div>
+  <% if user_signed_in? %>
+    <nav class="navbar navnar-expand-lg navbar-light bg-light pl-5 font">
+      <%= link_to "受付",edit_receptions_path, class:'navbar-brand' %>
+      <%= link_to "連絡帳",notes_path, class:'navbar-brand' %>
+      <%= link_to "月間予定",edit_calendars_path, class:'navbar-brand' %>
+      <%= link_to "利用状況",receptions_path, class:'navbar-brand' %>
+      <button class="navbar-toggler" type="button"
+      data-toggle="collapse"
+      data-target="#navmenu1"
+      aria-controls="navmenu1"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu1">
+        <div class="navbar-nav">
+          <%= link_to 'アカウント編集', edit_user_registration_path, class:'nav-item nav-link' %>
+          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:'nav-item nav-link', data: {confirm: "ログアウトしますか？"} %>
+        </div>
+      </div>
+    </nav>
+  <% else %>
+    <ul id="nav">
+      <li><%= link_to "新規登録", new_user_registration_path, class:'nav-link' %></li>
+      <li><%= link_to "ログイン", new_user_session_path, class:'nav-link' %></li>
+      <li><%= link_to 'ゲストログイン(閲覧用)', users_guest_sign_in_path, method: :post, class:'nav-link' %></li>
+    </ul>
+  <% end %>
 </header>

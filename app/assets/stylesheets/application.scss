@@ -10,6 +10,7 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
 @import "@fortawesome/fontawesome-free/scss/fontawesome";
 @import "@fortawesome/fontawesome-free/scss/regular";
 
+
 .mw-md {
    max-width: 576px;
  }
@@ -18,60 +19,77 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
  }
 
 // ↓ヘッダーcss
- header {
-   overflow: hidden;
- }
 
- .logo {
-	 font-size: 20px;
-	 }
- 
- .dropdown-toggler {
- 	border-color: rgba(0, 0, 0, 0);
- }
+header {
+	overflow: hidden;
+}
 
- .box14 {
- 	padding: 0.2em 0.5em;
- 	margin: 1em 0 0.5em 0;
- 	background: #d6ebff;
- 	box-shadow: 0px 0px 0px 10px #d6ebff;
-	 border: dashed 2px white;
- }
+.navbar-brand {
+	font-size: clamp(12px, 3vw, 20px);
+}
 
- .box14 p {
- 	margin: 0;
- 	padding: 0;
- }
+.navbar {
+	justify-content: space-evenly;
+	padding: 0.5rem 0rem 0.5rem 1rem;
+}
 
- #nav {
- 	list-style: none;
-	 display: flex;
-	 padding: 0 0 12px 0;
-	 justify-content: center;
-	 align-items: center;
- }
+.navbar-light .navbar-toggler {
+	border-color: rgba(0, 0, 0, 0);
+}
+
+
+
+#nav {
+	list-style: none;
+	display: flex;
+	padding: 0 0 12px 0;
+	justify-content: center;
+	align-items: center;
+}
 
  #nav li {
- 	width: 140px;
+	 width: 140px;
  	text-align: center;
  	height: 50px;
  	line-height: 50px;
  	margin-right: 2px;
- }
+}
 
- #nav li a {
-	 white-space: nowrap;
- 	text-decoration: none;
+#nav li a {
+	white-space: nowrap;
+	text-decoration: none;
  	color:black;
  	font-weight: bold;
 	 padding:20px;
- }
-//  ↑ここまでヘッダー
-
-
-// 連絡帳のindexページのボタン
-.btn-third {
-  	width:33.33333%;
+	}
+	//  ↑ここまでヘッダー
+	
+	.stitch-blue {
+		font-size: 20px;
+		padding: 0.2em 0.5em;
+		margin: 1em 0 0.5em 0;
+		background: #d6ebff;
+		box-shadow: 0px 0px 0px 10px #d6ebff;
+		border: dashed 2px white;
+	}
+	
+	.stitch {
+		font-size: 20px;
+		padding: 0.2em 0.5em;
+		margin: 1em 0 0.5em 0;
+		background: #FEA993;
+		box-shadow: 0px 0px 0px 10px #FEA993;
+		border: dashed 2px white;
+	}
+	
+	.stitch-blue p {
+		margin: 0;
+		padding: 0;
+	}
+	
+	// 連絡帳のindexページのボタン
+	.btn-third {
+		width:33.33333%;
   	/* 未対応ブラウザ用 */
   	width:-webkit-calc(100% / 3);
   	/* ベンダープレフィックス */
