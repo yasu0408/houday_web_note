@@ -1,47 +1,104 @@
 /*
- *= require flatpickr
- *= require flatpickr/dist/themes/material_blue
- *= require_tree .
- *= require_self
- */
- .mw-md {
-   max-width: 576px;
- }
- .mw-xl {
-   max-width: 1200px;
- }
+*= require flatpickr
+*= require flatpickr/dist/themes/material_blue
+*= require_tree .
+*= require_self
+*/
+@import "bootstrap/scss/bootstrap";
 
- header {
-   overflow: hidden;
- }
+$fa-font-path: "@fortawesome/fontawesome-free/webfonts";
+@import "@fortawesome/fontawesome-free/scss/fontawesome";
+@import "@fortawesome/fontawesome-free/scss/regular";
 
- .dorpdown-toggler {
- 	border-color: rgba(0, 0, 0, 0);
- }
+.mw-md {
+  max-width: 576px;
+}
 
- @import "bootstrap/scss/bootstrap";
+.mw-xl {
+  max-width: 1200px;
+}
 
- $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
- @import "@fortawesome/fontawesome-free/scss/fontawesome";
- @import "@fortawesome/fontawesome-free/scss/regular";
+// ↓ヘッダーcss
+
+header {
+  overflow: hidden;
+}
+
+.navbar-brand {
+  font-size: clamp(12px, 3vw, 20px);
+}
+
+.navbar {
+  justify-content: space-evenly;
+  padding: 0.5rem 0rem 0.5rem 1rem;
+}
+
+.navbar-light .navbar-toggler {
+  border-color: rgba(0, 0, 0, 0);
+}
+
+#nav {
+  list-style: none;
+  display: flex;
+  padding: 0 0 12px 0;
+  justify-content: center;
+  align-items: center;
+}
+
+#nav li {
+  width: 140px;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  margin-right: 2px;
+}
+
+#nav li a {
+  white-space: nowrap;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  padding: 20px;
+}
+//  ↑ここまでヘッダー
+
+.stitch-blue {
+  font-size: 20px;
+  padding: 0.2em 0.5em;
+  margin: 1em 0 0.5em 0;
+  background: #d6ebff;
+  box-shadow: 0px 0px 0px 10px #d6ebff;
+  border: dashed 2px white;
+}
+
+.stitch {
+  font-size: 20px;
+  padding: 0.2em 0.5em;
+  margin: 1em 0 0.5em 0;
+  background: #fea993;
+  box-shadow: 0px 0px 0px 10px #fea993;
+  border: dashed 2px white;
+}
+
+.stitch-blue p {
+  margin: 0;
+  padding: 0;
+}
 
 // 連絡帳のindexページのボタン
 .btn-third {
-  	width:33.33333%;
-  	/* 未対応ブラウザ用 */
-  	width:-webkit-calc(100% / 3);
-  	/* ベンダープレフィックス */
-  	width:calc(100% / 3);
+  width: 33.33333%;
+  /* 未対応ブラウザ用 */
+  width: -webkit-calc(100% / 3);
+  /* ベンダープレフィックス */
+  width: calc(100% / 3);
 }
 
+// フラッシュ設定
 .alert-notice {
-	@extend .alert-success;
+  @extend .alert-success;
 }
 
 .alert-alert {
-	@extend .alert-danger;
+  @extend .alert-danger;
 }
-
-
-
-

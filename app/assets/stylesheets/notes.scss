@@ -12,7 +12,7 @@
 
 .osare-table tbody td {
   border: none !important;
-  background-color: #FFF9FF !important;
+  background-color: #fff9ff !important;
   border-bottom: solid 2px #f9f9f9 !important;
 }
 
@@ -21,8 +21,6 @@
   font-weight: bold;
   border-radius: 10px 10px 0px 0px;
 }
-
-
 
 /* ボディ項目 */
 .osare-table tbody th {
@@ -43,19 +41,19 @@
 }
 
 .osare-table thead th:nth-child(2) {
-  background: #FFBCFF;
+  background: #ffbcff;
 }
 
 .osare-table thead th:nth-child(3) {
-  background: #FFFFB2;
+  background: #ffffb2;
 }
 
 .osare-table thead th:nth-child(4) {
-  background: #C4FF89;
+  background: #c4ff89;
 }
 
 .osare-table thead th:nth-child(5) {
-  background: #FFB2D8;
+  background: #ffb2d8;
 }
 
 /* 最終行のボーダーをなくす */
@@ -64,25 +62,16 @@
   border-bottom: none !important;
 }
 
-
-
 /* スマホ調整 */
 @media (max-width: 767px) {
-
   .osare-table thead th,
   .osare-table tbody th {
     padding: 0;
   }
-
 }
-
-
-
-
 
 /*（共通）　項目の多いテーブルの幅を調整*/
 @media (max-width: 767px) {
-
   .col6t th,
   .col6t td {
     font-size: 0.4em;
