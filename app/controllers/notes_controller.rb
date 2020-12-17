@@ -1,5 +1,5 @@
 class NotesController < ApplicationController
-  before_action :set_note, only: %i[show edit update]
+  before_action :set_note, only: %i[show edit update destroy]
 
   def index
     @notes = current_user.notes.order(date: :desc).includes(:user)
@@ -29,6 +29,11 @@ class NotesController < ApplicationController
     @note.update!(note_params)
     flash[:notice] = "更新しました"
     redirect_to root_path
+  end
+
+  def destroy
+    @note.destroy!
+    redirect_to root_path, notice: "削除に成功しました"
   end
 
   private

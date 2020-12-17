@@ -1,6 +1,7 @@
 <div class="d-flex justify-content-center">
   <div class="stitch font text-center mb-4 w-50">
-    連絡帳一覧　名前:<%= current_user.name %>
+    連絡帳一覧<br class="br-sp">
+    名前:<%= current_user.name %>
   </div>
 </div>
 <div class="my-4 d-flex justify-content-center">
@@ -26,7 +27,7 @@
           <%= link_to edit_note_path(note), class: "btn btn-success btn-third" do %>
             <i class="fas fa-exchange-alt"></i> <span class="d-none d-md-inline">変更</span>
           <% end %>
-          <%= link_to note, class: "btn btn-danger #{'disabled'} btn-third" do %>
+          <%= link_to note_path(note), method: :delete, data: { confirm: "削除しますか?" }, class: "btn btn-danger btn-third" do %>
             <i class="fas fa-eraser"></i> <span class="d-none d-md-inline">削除</span>
           <% end %>
         </td>

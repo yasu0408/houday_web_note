@@ -1,4 +1,4 @@
-<h3 class="text-center">【今日の日付】 <%= l Date.current, format: :long %></h3>
+<h3 class="text-center font font-size">【今日の日付】 <%= l Date.current, format: :long %></h3>
 <%= form_with model: @note, local: true do |f| %>
   <div class="form-group">
     <%= f.label :date %>

@@ -15,10 +15,10 @@
   <tbody>
     <tr>
       <th><%=l @reception.arrive %></th>
-      <td><%=l @reception.arrive, format: :short %></td>
+      <td><%=l @reception.arrive, format: :long %></td>
       <td>
         <% if @reception.leave.present? %>
-          <%=l @reception.leave, format: :short %>
+          <%=l @reception.leave, format: :long %>
         <% else %>
           ---
         <% end %>
