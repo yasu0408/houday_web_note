@@ -33,6 +33,7 @@ gem 'devise-i18n'
 gem 'devise-bootstrap-views', '~> 1.0'
 gem 'gon'
 gem 'activerecord-import'
+gem 'kaminari'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
