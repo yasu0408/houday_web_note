@@ -26,7 +26,7 @@ class NotesController < ApplicationController
   end
 
   def update
-    @note.update!(note_params)
+    @note.update!(update_params)
     flash[:notice] = "更新しました"
     redirect_to root_path
   end
@@ -39,6 +39,10 @@ class NotesController < ApplicationController
   private
 
   def note_params
+    params.require(:note).permit(:date, :condition, :humor, :temp, :message).merge({ date: Date.current })
+  end
+
+  def update_params
     params.require(:note).permit(:date, :condition, :humor, :temp, :message)
   end
 
