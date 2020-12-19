@@ -3,26 +3,16 @@
     今日の利用状況
   </div>
 </div>
-<table class="osare-table osare-hikaku col4t text-center">
+<table class="osare-table osare-hikaku col2t text-center">
   <thead>
     <tr>
-      <th>日付</th>
-      <th>来所時間</th>
-      <th>退所時間</th>
-      <th>利用の有無</th>
+      <th class="bgc-p">日付</th>
+      <th class="bgc-b">利用状況</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th><%=l @reception.arrive %></th>
-      <td><%=l @reception.arrive, format: :long %></td>
-      <td>
-        <% if @reception.leave.present? %>
-          <%=l @reception.leave, format: :long %>
-        <% else %>
-          ---
-        <% end %>
-      </td>
       <td>
         <% if @reception.arrive.present? && @reception.leave.nil? %>
           現在利用中
@@ -30,6 +20,26 @@
           現在送迎中
         <% else %>
           利用予定あり
+        <% end %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<table class="osare-table osare-hikaku col2t text-center">
+  <thead>
+    <tr>
+      <th class="bgc-y">来所時間</th>
+      <th class="bgc-g">退所時間</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="py-4"><%=l @reception.arrive, format: :long %></td>
+      <td class="py-4">
+        <% if @reception.leave.present? %>
+          <%=l @reception.leave, format: :long %>
+        <% else %>
+          ---
         <% end %>
       </td>
     </tr>
