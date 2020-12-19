@@ -4,15 +4,12 @@
     名前:<%= current_user.name %>
   </div>
 </div>
-<div class="my-4 d-flex justify-content-center">
-  <%= link_to "今日の連絡帳を記入する", new_note_path, class: "btn btn-primary btn-block　w-auto px-5" %>
-</div>
 <table class="table table-bordered table-striped mt-4">
   <thead class="text-center table-head">
     <tr>
       <th scope="col">No</th>
       <th scope="col">利用日</th>
-      <th scope="col">確認・変更</th>
+      <th scope="col">確認・変更・削除</th>
     </tr>
   </thead>
   <tbody>
@@ -35,4 +32,7 @@
     <% end %>
   </tbody>
 </table>
+<div class="my-4 d-flex justify-content-center">
+  <%= link_to "今日の連絡帳を記入する", new_note_path, class: "btn btn-primary btn-block　w-auto px-5" %>
+</div>
 <%= paginate @notes %>

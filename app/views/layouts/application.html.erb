@@ -9,11 +9,12 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'calendar', 'data-turbolinks-track': 'reload' if controller_name == 'calendars' %>
     <%= Gon::Base.render_data if controller_name == 'calendars' %>
+    <%= favicon_link_tag('favicon.ico') %>
   </head>
   <body>
     <%= render "layouts/header" %>
     <%= render "layouts/flash" %>
-    <div class="container-fluid py-4 <%= devise_controller? ? 'mw-md' : 'mw-xl' %>">
+    <div class="container-fluid <%= devise_controller? ? 'mw-md' : 'mw-xl' %>">
       <%= yield %>
     </div>
     <%= render 'layouts/footer' %>

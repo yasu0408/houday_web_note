@@ -58,6 +58,7 @@ header {
 }
 //  ↑ここまでヘッダー
 
+// ステッチ設定
 .stitch {
   font-size: 20px;
   padding: 0.2em 0.5em;
@@ -97,7 +98,7 @@ header {
 .alert-alert {
   @extend .alert-danger;
 }
-
+// フォント設定
 .font {
   font-family: "Hiragino Maru Gothic Pro", "ヒラギノ丸ゴ Pro W4", sans-serif;
 }
@@ -109,4 +110,8 @@ header {
   .br-sp {
     display: none;
   }
+}
+
+.pagination {
+  justify-content: center;
 }

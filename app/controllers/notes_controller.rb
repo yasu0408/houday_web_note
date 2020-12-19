@@ -1,6 +1,6 @@
 class NotesController < ApplicationController
   before_action :set_note, only: %i[show edit update destroy]
-  PER_PAGE = 10
+  PER_PAGE = 5
 
   def index
     @notes = current_user.notes.order(date: :desc).includes(:user).page(params[:page]).per(PER_PAGE)
