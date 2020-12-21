@@ -8,6 +8,7 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'calendar', 'data-turbolinks-track': 'reload' if controller_name == 'calendars' %>
+    <%#= javascript_pack_tag 'reception', 'data-turbolinks-track': 'reload' if controller_name == 'receptions' %>
     <%= Gon::Base.render_data if controller_name == 'calendars' %>
     <%= favicon_link_tag('favicon.ico') %>
   </head>

@@ -46,5 +46,33 @@
   </tbody>
 </table>
 <div class="d-flex justify-content-center">
-  <%= link_to "もどる", root_path, class: "btn btn-block btn-primary mt-3 w-50" %>
+  <%= link_to "もどる", root_path, class: "btn btn-block btn-primary mt-3 w-75" %>
+</div>
+<div class="d-flex justify-content-center">
+  <button type="button" class="btn btn-warning btn-block w-75 mt-3" data-toggle="modal" data-target="#exampleModalCenter">
+    <i class="fas fa-exclamation-triangle"></i>　使い方・説明　<i class="fas fa-exclamation-triangle"></i>　
+  </button>
+</div>
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">今日の利用状況の説明</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        このページでは以下の４点が確認できます<br>
+        ・利用日の日付<br>
+        ・利用開始時間<br>
+        ・利用終了時間<br>
+        ・利用状況<br>
+        ※利用予定あり、利用中、送迎中のどれかが表示されます
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>
