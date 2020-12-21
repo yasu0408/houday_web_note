@@ -4,10 +4,10 @@ PASSWORD = "password"
 
 User.destroy_all
 # Reception.destroy_all
-user = User.guest
 user1 = User.create!(name: "太郎", email: "tarou@example.com", password: "password")
 user2 = User.create!(name: "次郎", email: "jirou@example.com", password: "password")
 user3 = User.create!(name: "三郎", email: "saburou@example.com", password: "password")
+user = User.guest
 
 # require "Time"
 # require "Date"
@@ -32,25 +32,20 @@ user3.calendars.create!(date: Date.new(2020, 12, 12))
 
 # user.create!(name: NAME, email: EMAIL, password: PASSWORD)
 user.receptions.create!(arrive: Time.current, user_id: user.id)
-user.notes.create!(date: Time.new(2020, 9, 11, 9, 30), condition: "よい", humor: "よい", temp: 36.7, message: "サンプル文です", user_id: user.id)
-user.notes.create!(date: Time.new(2020, 9, 12, 9, 30), condition: "よい", humor: "よい", temp: 36.7, message: "サンプル文です", user_id: user.id)
-user.notes.create!(date: Time.new(2020, 9, 14, 9, 30), condition: "よい", humor: "よい", temp: 36.7, message: "サンプル文です", user_id: user.id)
-user.notes.create!(date: Time.new(2020, 9, 15, 9, 30), condition: "よい", humor: "よい", temp: 36.7, message: "サンプル文です", user_id: user.id)
-user.notes.create!(date: Time.new(2020, 9, 16, 9, 30), condition: "よい", humor: "よい", temp: 36.7, message: "サンプル文です", user_id: user.id)
-user.notes.create!(date: Time.new(2020, 9, 17, 9, 30), condition: "よい", humor: "よい", temp: 36.7, message: "サンプル文です", user_id: user.id)
-user.notes.create!(date: Time.new(2020, 9, 18, 9, 30), condition: "よい", humor: "よい", temp: 36.7, message: "サンプル文です", user_id: user.id)
-user.notes.create!(date: Time.new(2020, 9, 19, 9, 30), condition: "よい", humor: "よい", temp: 36.7, message: "サンプル文です", user_id: user.id)
-user.notes.create!(date: Time.new(2020, 9, 21, 9, 30), condition: "よい", humor: "よい", temp: 36.7, message: "サンプル文です", user_id: user.id)
-user.notes.create!(date: Time.new(2020, 9, 22, 9, 30), condition: "よい", humor: "よい", temp: 36.7, message: "サンプル文です", user_id: user.id)
-user.notes.create!(date: Time.new(2020, 9, 23, 9, 30), condition: "よい", humor: "よい", temp: 36.7, message: "サンプル文です", user_id: user.id)
-user.notes.create!(date: Time.new(2020, 9, 24, 9, 30), condition: "よい", humor: "よい", temp: 36.7, message: "サンプル文です", user_id: user.id)
-user.notes.create!(date: Time.new(2020, 9, 25, 9, 30), condition: "よい", humor: "よい", temp: 36.7, message: "サンプル文です", user_id: user.id)
-user.notes.create!(date: Time.new(2020, 9, 26, 9, 30), condition: "よい", humor: "よい", temp: 36.7, message: "サンプル文です", user_id: user.id)
-user.notes.create!(date: Time.new(2020, 9, 28, 9, 30), condition: "よい", humor: "よい", temp: 36.7, message: "サンプル文です", user_id: user.id)
-user.notes.create!(date: Time.new(2020, 9, 29, 9, 30), condition: "よい", humor: "よい", temp: 36.7, message: "サンプル文です", user_id: user.id)
-user.notes.create!(date: Time.new(2020, 9, 30, 9, 30), condition: "よい", humor: "よい", temp: 36.7, message: "サンプル文です", user_id: user.id)
-user.notes.create!(date: Time.new(2020, 10, 1, 9, 30), condition: "よい", humor: "よい", temp: 36.7, message: "サンプル文です", user_id: user.id)
-user.notes.create!(date: Time.new(2020, 10, 2, 9, 30), condition: "よい", humor: "よい", temp: 36.7, message: "サンプル文です", user_id: user.id)
-user.notes.create!(date: Time.new(2020, 10, 3, 9, 30), condition: "よい", humor: "よい", temp: 36.7, message: "サンプル文です", user_id: user.id)
+# days = [1, 2, 3, 4, 5, 6]
+# workdays = (from..to).to_a.select { |k| days.include?(k.wday) }
+MESSAGES = []
+message1 = "今日の帰りの送迎ですが、私が１８時ごろ施設に直接お迎えに行こうと思います。よろしくおねがいします。それと来週の月曜日の学校の下校時間ですが、１５時下校から１５時３０分下校に変更したようです。"
+message2 = "体調も機嫌も良いですが、施設外活動が楽しみなようで少しテンションが高いです。ご迷惑をおかけするかもしれませんが、よろしくおねがいします。本人に昼食後のお薬をもたせているので、飲んでいることを確認していただければ嬉しいです。"
+message3 = "職員さんとダンボール工作をしたと嬉しそうに話をしてくれました。今日も続きをするとはりきっています。よろしくお願いします。"
+MESSAGES << message1 << message2 << message3
+
+from = Date.today - 150
+to = Date.today - 1
+(from..to).each do |date|
+  next if date.wday == 0
+  next if rand(5) == 0
+  user.notes.create!(date: date, condition: Note::CONDITION.sample, humor: Note::HUMOR.sample, temp: rand(36.0..37.0).round(1), message: MESSAGES.sample)
+end
 
 puts "初期データの投入に成功しました！"
