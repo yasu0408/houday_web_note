@@ -1,9 +1,9 @@
 <header>
-  <div class="stitch-blue d-flex justify-content-center align-items-center pt-3 font">
-    <%= link_to '<span class="d-none d-md-inline">放課後等デイサービス専用アプリ　</span>Houday Web Note'.html_safe, root_path, class:'text-center text-dark pb-3' %>
+  <div class="stitch-blue d-flex justify-content-center align-items-center py-3 font">
+    <%= link_to '<span class="d-none d-md-inline">放課後等デイサービス専用アプリ　</span>Houday Web Note'.html_safe, root_path, class:'text-center text-dark' %>
   </div>
   <% if user_signed_in? %>
-    <nav class="navbar navnar-expand-lg navbar-light bg-light font justify-content-space-between">
+    <nav class="navbar navnar-expand-lg navbar-light bg-light font justify-content-space-between mb-1">
       <%= link_to "受付",edit_receptions_path, class:'navbar-brand ml-4' %>
       <%= link_to "連絡帳",notes_path, class:'navbar-brand' %>
       <%= link_to "月間予定",edit_calendars_path, class:'navbar-brand' %>

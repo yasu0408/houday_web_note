@@ -1,16 +1,23 @@
 class NotesController < ApplicationController
   before_action :set_note, only: %i[show edit update destroy]
+  PER_PAGE = 5
 
   def index
-    @notes = current_user.notes.order(date: :desc).includes(:user)
+    @notes = current_user.notes.order(date: :desc).includes(:user).page(params[:page]).per(PER_PAGE)
+    # @notes = current_user.notes.order(date: :desc).includes(:user)
   end
 
   def new
-    @note = Note.new(temp: 36.5, message: "よろしくおねがいします。")
+    if current_user.calendars.find_by(date: Date.today)
+      @note = Note.new(temp: 36.5, message: "よろしくおねがいします。")
+    else
+      redirect_to edit_calendars_path, alert: "本日の利用がありません。利用日を決めましょう。"
+    end
   end
 
   def create
     @note = current_user.notes.new(note_params)
+    @note.date = Date.current
     if @note.save
       # current_user.notes.create!(note_params)
       redirect_to root_path, notice: "投稿しました"

@@ -1,13 +1,4 @@
-<h3 class="text-center font font-size">【今日の日付】 <%= l Date.current, format: :long %></h3>
 <%= form_with model: @note, local: true do |f| %>
-  <div class="form-group">
-    <%= f.label :date %>
-    <% if controller.controller_name == 'notes' && controller.action_name == 'edit' %>
-      <%= f.date_field :date, value: @note.date, class: "form-control" %>
-    <% else %>
-      <%= f.date_field :date, value: Date.current, class: "form-control" %>
-    <% end %>
-  </div>
   <div>
     <%= f.label :condition %>
     <%= f.select :condition, Note::CONDITION, {}, { value: "ふつう", class: "custom-select"} %>
@@ -26,6 +17,35 @@
     <small id="messageHelp" class="form-text text-muted">おこさまの様子や気になることがあればご記入ください</small>
   </div>
   <div class="d-flex justify-content-center">
-    <%= f.submit "送信", class: "btn btn-primary btn-block w-50" %>
+    <%= f.submit "送信", class: "btn btn-primary btn-block w-75" %>
   </div>
 <% end %>
+<div class="d-flex justify-content-center">
+  <button type="button" class="btn btn-warning btn-block w-75 mt-3" data-toggle="modal" data-target="#exampleModalCenter">
+    <i class="fas fa-exclamation-triangle"></i>　使い方・説明　<i class="fas fa-exclamation-triangle"></i>
+  </button>
+</div>
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">連絡帳投稿機能の使い方</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        連絡帳投稿機能では今日の連絡帳をかんたんに作成することができます<br>
+        <br>
+        ①体調の項目では"よい"、"ふつう"、"わるい"の中から１つを選びます<br>
+        ②機嫌の項目では"よい"、"ふつう"、"わるい"の中から１つを選びます<br>
+        ③体温の項目では35.0〜40.0の間で数字を入力します<br>
+        ④メッセージの項目では職員に向けての伝えたいことを入力します<br>
+        ⑤4つの項目が埋まっていることを確認し送信ボタンを押します
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

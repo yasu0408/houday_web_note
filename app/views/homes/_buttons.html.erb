@@ -1,16 +1,20 @@
 <% if user_signed_in? %>
   <div class="button-container">
-    <div class="index-button">
-      <%= link_to "うけつけ",edit_receptions_path, class: "button-text" %>
-    </div>
-    <div class="index-button">
-      <%= link_to "連絡帳",notes_path, class: "button-text" %>
-    </div>
-    <div class="index-button">
-      <%= link_to "月間利用",edit_calendars_path, class: "button-text" %>
-    </div>
-    <div class="index-button">
-      <%= link_to "利用状況",receptions_path, class: "button-text" %>
-    </div>
+    <%= button_to "うけつけ",{controller: 'receptions', action: 'edit'},{method: :get, class: "button-text index-button"} %>
+    <%= button_to "連絡帳",{controller: 'notes', action: 'index'},{method: :get, class: "button-text index-button"} %>
+    <%= button_to "月間利用日",{controller: 'calendars', action: 'edit'},{method: :get, class: "button-text index-button"} %>
+    <%= button_to receptions_path, method: :get, class: "button-text index-button" do %>
+      今日の<br>
+      利用状況
+    <% end %>
+  </div>
+<% else %>
+  <div class="button-container">
+    <%= button_to "新規登録",{controller: 'users/registrations', action: 'new'},{method: :get, class: "button-text index-button"} %>
+    <%= button_to "ログイン",{controller: 'devise/sessions', action: 'new'},{method: :get, class: "button-text index-button"} %>
+    <%= button_to users_guest_sign_in_path, method: :post, class: "button-text index-button" do %>
+      ゲスト<br>
+      ログイン
+    <% end %>
   </div>
 <% end %>

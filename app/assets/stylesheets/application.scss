@@ -57,7 +57,21 @@ header {
   font-size: clamp(12px, 3vw, 20px);
 }
 //  ↑ここまでヘッダー
+// ↓フッター
+.wrapper {
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 105px;
+  box-sizing: border-box;
+}
 
+footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+// ステッチ設定
 .stitch {
   font-size: 20px;
   padding: 0.2em 0.5em;
@@ -97,7 +111,7 @@ header {
 .alert-alert {
   @extend .alert-danger;
 }
-
+// フォント設定
 .font {
   font-family: "Hiragino Maru Gothic Pro", "ヒラギノ丸ゴ Pro W4", sans-serif;
 }
@@ -109,4 +123,40 @@ header {
   .br-sp {
     display: none;
   }
+}
+
+.pagination {
+  justify-content: center;
+}
+
+.footer-menus {
+}
+
+.home-btn {
+  background-color: #55acee;
+  color: #ffffff;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border: none;
+  width: clamp(70px, 18vw, 150px);
+}
+.back-btn {
+  background-color: #3b5998;
+  color: #ffffff;
+  border: none;
+  width: clamp(70px, 18vw, 150px);
+}
+
+.how-to-btn {
+  background-color: #eb4654;
+  color: #ffffff;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border: none;
+  width: clamp(70px, 18vw, 150px);
+}
+
+.line {
+  border-bottom: 3px dashed #ffffff;
+  padding-bottom: 5px;
 }

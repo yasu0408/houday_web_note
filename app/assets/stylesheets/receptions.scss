@@ -1,0 +1,26 @@
+.reception-button {
+  display: flex;
+  border: none;
+  justify-content: center;
+  align-items: center;
+  width: clamp(60px, 15vw, 130px);
+  height: clamp(60px, 15vw, 130px);
+  font-size: clamp(12px, 3vw, 20px);
+  background-color: #fea993;
+  border-radius: 50%;
+  white-space: nowrap;
+  font-family: "Hiragino Maru Gothic Pro", "ヒラギノ丸ゴ Pro W4", sans-serif;
+  font-weight: bold;
+  color: #ffffff;
+}
+.btn-disable {
+  background-color: #cccccc !important;
+}
+
+.header-width {
+  width: clamp(210px, 55vw, 400px);
+}
+
+.card {
+  width: clamp(210px, 40vw, 450px);
+}

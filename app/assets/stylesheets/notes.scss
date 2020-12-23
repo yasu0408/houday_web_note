@@ -12,7 +12,7 @@
 
 .osare-table tbody td {
   border: none !important;
-  background-color: #fff9ff !important;
+  background-color: #f2f5fc !important;
   border-bottom: solid 2px #f9f9f9 !important;
 }
 
@@ -36,20 +36,24 @@
 }
 
 /* ヘッダー行　１列ごとの色変え */
-.osare-table thead th:nth-child(1) {
+.bgc-b {
   background: #81d4fa;
 }
 
-.osare-table thead th:nth-child(2) {
+.bgc-p {
   background: #ffbcff;
 }
 
-.osare-table thead th:nth-child(3) {
+.bgc-y {
   background: #ffffb2;
 }
 
-.osare-table thead th:nth-child(4) {
+.bgc-g {
   background: #c4ff89;
+}
+
+.bgc-gr {
+  background: grey;
 }
 
 .osare-table thead th:nth-child(5) {
@@ -95,4 +99,8 @@
     font-size: 0.8em;
     padding: 10px 10px;
   }
+}
+.table th,
+.table td {
+  vertical-align: middle !important;
 }

@@ -1,4 +1,5 @@
 class ReceptionsController < ApplicationController
+  before_action :today_reception
   before_action :set_reception, only: %i[edit show update]
 
   def edit
@@ -6,7 +7,7 @@ class ReceptionsController < ApplicationController
 
   def show
     if @reception.nil?
-      flash[:alert] = "まだ本日の受付がありません"
+      flash[:alert] = "まだ本日の受付がありません。"
       redirect_to root_path
     end
   end
@@ -28,13 +29,14 @@ class ReceptionsController < ApplicationController
 
   private
 
+  def today_reception
+    if current_user.calendars.find_by(date: Date.today).nil?
+      redirect_to edit_calendars_path, alert: "本日の利用がありません。利用日を決めましょう。"
+    end
+  end
+
   def set_reception
     range = Date.today.beginning_of_day..Date.today.end_of_day
     @reception = current_user.receptions.find_by(arrive: range)
   end
-
-  # def receptions_params
-  #   params.require(:reception).permit(:arrive, :leave)
-  # end
-
 end
