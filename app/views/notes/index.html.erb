@@ -37,7 +37,9 @@
   </table>
 </div>
 <%= paginate @notes %>
-<div class="my-4 d-flex justify-content-center">
-  <%= link_to "今日の連絡帳を記入する", new_note_path, class: "calendar-button text-center mt-3" %>
-</div>
+<% if current_user.notes.find_by(date: Date.today).nil? %>
+  <div class="my-4 d-flex justify-content-center">
+    <%= link_to "今日の連絡帳を記入する", new_note_path, class: "calendar-button text-center mt-3"%>
+  </div>
+<% end %>
 <%= render 'layouts/footer-menus' %>
