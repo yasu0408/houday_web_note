@@ -5,7 +5,7 @@
 }
 
 .calendar-submit {
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 #edit_calendar {
@@ -22,6 +22,18 @@
   box-shadow: 0 0 0 7px #fea993;
 }
 
-.calendar-btn {
-  width: 310px !important;
+.calendar-button {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #668ad8;
+  color: #fff;
+  border-radius: 15px;
+  box-shadow: 0px 0px 0px 5px #668ad8;
+  border: dashed 2px #fff;
+  width: 307px;
+}
+
+.calendar-button:hover {
+  border: dotted 1px #fff;
 }

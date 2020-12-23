@@ -1,6 +1,6 @@
-<div class="d-flex justify-content-center">
-  <section class="card border-dark mt-3 font w-75" >
-    <div class="card-header text-center">
+<div class="d-flex justify-content-center mt-3 mb-3">
+  <section class="card border-dark mt-3 font" >
+    <div class="card-header text-left font-size">
       なまえ：<%= current_user.name %>
     </div>
     <div class="card-body">
@@ -15,43 +15,17 @@
     </div>
   </section>
 </div>
-<% if @reception.nil? %>
-  <div class="d-flex justify-content-center">
-    <%= link_to 'ついたよ', receptions_path, method: :patch, class: 'btn btn-success mt-3 btn-block w-75', remote: true %>
-  </div>
-<% elsif @reception.leave.nil? %>
-  <div class="d-flex justify-content-center">
-    <%= link_to 'かえるよ', receptions_path, method: :patch, class: 'btn btn-success mt-3 btn-block w-75', remote: true %>
-  </div>
-<% else %>
-  <div class="d-flex justify-content-center">
-    <%= link_to "もどる", root_path, class: 'btn btn-primary mt-3 btn-block w-75' %>
-  </div>
-<% end %>
-<!-- Button trigger modal -->
-<div class="d-flex justify-content-center">
-  <button type="button" class="btn btn-warning btn-block w-75 mt-3" data-toggle="modal" data-target="#exampleModalCenter">
-    <i class="fas fa-exclamation-triangle"></i>　使い方・解説　<i class="fas fa-exclamation-triangle"></i>
-  </button>
-</div>
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">受付機能の使い方</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ①利用者が施設に到着したら"ついたよ"ボタンをタップします<br>
-        ②利用者が退所したら"かえるよ"ボタンをタップします<br>
-        ※受付を済ませると"今日の利用状況"から詳細が確認できます
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
+<div>
+  <% if @reception.nil? %>
+    <div class="d-flex justify-content-center">
+      <%= button_to "ついたよ",{controller: 'receptions', action: 'update'},{method: :patch, class: "button-text reception-button arrive-active mt-4 mr-3", remote: true } %>
+      <%= button_to "かえるよ",{controller: 'receptions', action: 'update'},{method: :patch, class: "button-text reception-button mt-4 btn-disable ml-3", disabled: true } %>
     </div>
-  </div>
+  <% elsif @reception.leave.nil? %>
+    <div class="d-flex justify-content-center">
+      <%= button_to "ついたよ",{controller: 'receptions', action: 'update'},{method: :patch, class: "button-text reception-button mt-4 mr-3 btn-disable ml-3", disabled: true } %>
+      <%= button_to "かえるよ",{controller: 'receptions', action: 'update'},{method: :patch, class: "button-text reception-button mt-4", remote: true } %>
+    </div>
+  <% else %>
+  <% end %>
 </div>

@@ -8,7 +8,11 @@ class NotesController < ApplicationController
   end
 
   def new
-    @note = Note.new(temp: 36.5, message: "よろしくおねがいします。")
+    if current_user.calendars.find_by(date: Date.today)
+      @note = Note.new(temp: 36.5, message: "よろしくおねがいします。")
+    else
+      redirect_to edit_calendars_path, alert: "本日の利用がありません。利用日を決めましょう。"
+    end
   end
 
   def create

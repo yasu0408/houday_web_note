@@ -32,6 +32,7 @@ user3.calendars.create!(date: Date.new(2020, 12, 12))
 
 # user.create!(name: NAME, email: EMAIL, password: PASSWORD)
 user.receptions.create!(arrive: Time.current, user_id: user.id)
+user.calendars.create!(date: Date.today)
 # days = [1, 2, 3, 4, 5, 6]
 # workdays = (from..to).to_a.select { |k| days.include?(k.wday) }
 MESSAGES = []

@@ -13,11 +13,13 @@
     <%= favicon_link_tag('favicon.ico') %>
   </head>
   <body>
-    <%= render "layouts/header" %>
-    <%= render "layouts/flash" %>
-    <div class="container-fluid <%= devise_controller? ? 'mw-md' : 'mw-xl' %>">
-      <%= yield %>
+    <div class="wrapper">
+      <%= render "layouts/header" %>
+      <%= render "layouts/flash" %>
+      <div class="container-fluid <%= devise_controller? ? 'mw-md' : 'mw-xl' %>">
+        <%= yield %>
+      </div>
+      <%= render 'layouts/footer' %>
     </div>
-    <%= render 'layouts/footer' %>
   </body>
 </html>

@@ -1,42 +1,12 @@
 <div class="d-flex justify-content-center">
-  <div class="stitch font text-center mb-4 w-50">
-    月間利用日
+  <div class="stitch font text-center mb-4 header-width">
+    　月間利用日　
   </div>
 </div>
-<div class ="calendar">
+<div class ="calendar mt-4 mb-3">
   <%= form_with url: calendars_path, method: :put, local: true do |form| %>
     <input id ="edit_calendar" type="text" name="calendar[date]" placeholder="利用日を選んでください" readonly="readonly" >
-    <%= form.submit "送信", class: "btn btn-primary btn-block calendar-submit" %>
+    <%= form.submit "送信", class: "calendar-button calendar-submit px-5 font font-size px-3" %>
   <% end %>
 </div>
-<div class="d-flex justify-content-center px-3">
-  <button type="button" class="btn btn-warning btn-block calendar-btn mt-3" data-toggle="modal" data-target="#exampleModalCenter">
-    <i class="fas fa-exclamation-triangle"></i>　使い方・説明　<i class="fas fa-exclamation-triangle"></i>
-  </button>
-</div>
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">月間利用日の投稿機能の使い方</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ①カレンダーから利用したい日付をタップ<br>
-        ②日付が青色になっていることを確認し、送信ボタンを押す<br>
-        <br>
-        ※利用日のキャンセルの場合は、青色になっている日付をタップすることでキャンセルできます
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Modal -->
-<%# gifファイルの貼り付け %>
-<%# <img src="/assets/sample_play.gif" id="guide-calendar"
-  onclick="this.setAttribute('src', this.getAttribute('src').replace(/assets/_play.gif/g, '.gif'));"
-  style="cursor: pointer;"> %>
+<%= render 'layouts/footer-menus' %>

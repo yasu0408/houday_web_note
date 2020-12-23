@@ -9,11 +9,11 @@ document.addEventListener("turbolinks:load", () => {
     maxDate: new Date().fp_incr(30),
     dateFormat: "Y-m-d",
     disableMobile: true,
-    disable: [
-      function (date) {
-        return (date.getDay() === 0);
-      }
-    ],
+    // disable: [
+    //   function (date) {
+    //     return (date.getDay() === 0);
+    //   }
+    // ],
     defaultDate: selectedDate,
   }
   flatpickr('#edit_calendar', config);
