@@ -1,4 +1,4 @@
-<%= form_with model: @note, local: true do |f| %>
+<%= form_with model: @note, class: "header-width mx-auto", local: true do |f| %>
   <div>
     <%= f.label :condition %>
     <%= f.select :condition, Note::CONDITION, {}, { value: "ふつう", class: "custom-select"} %>
@@ -17,35 +17,6 @@
     <small id="messageHelp" class="form-text text-muted">おこさまの様子や気になることがあればご記入ください</small>
   </div>
   <div class="d-flex justify-content-center">
-    <%= f.submit "送信", class: "btn btn-primary btn-block w-75" %>
+    <%= f.submit "送信", class: "submit-button text-center py-3 px-2 font font-size" %>
   </div>
 <% end %>
-<div class="d-flex justify-content-center">
-  <button type="button" class="btn btn-warning btn-block w-75 mt-3" data-toggle="modal" data-target="#exampleModalCenter">
-    <i class="fas fa-exclamation-triangle"></i>　使い方・説明　<i class="fas fa-exclamation-triangle"></i>
-  </button>
-</div>
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">連絡帳投稿機能の使い方</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        連絡帳投稿機能では今日の連絡帳をかんたんに作成することができます<br>
-        <br>
-        ①体調の項目では"よい"、"ふつう"、"わるい"の中から１つを選びます<br>
-        ②機嫌の項目では"よい"、"ふつう"、"わるい"の中から１つを選びます<br>
-        ③体温の項目では35.0〜40.0の間で数字を入力します<br>
-        ④メッセージの項目では職員に向けての伝えたいことを入力します<br>
-        ⑤4つの項目が埋まっていることを確認し送信ボタンを押します
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>

@@ -1,20 +1,26 @@
-<div class="d-flex justify-content-center mt-3 mb-3">
-  <section class="card border-dark mt-3 font" >
-    <div class="card-header text-left font-size">
-      なまえ：<%= current_user.name %>
-    </div>
-    <div class="card-body">
-      <p class="card-text font font-size">きたじかん　：
-        <%= l @reception&.arrive, format: :short if @reception.present? %>
-      </p>
-    </div>
-    <div class="card-body">
-      <p class="card-text font font-size">かえるじかん：
-        <%= l @reception.leave, format: :short if @reception.present? && @reception.leave.present? %>
-      </p>
-    </div>
-  </section>
-</div>
+<%# <div class="d-flex justify-content-center mt-3 mb-3"> %>
+<%# <section class="card border-dark mt-3 font header-width" > %>
+<%# <div class="card-header text-left font-size"> %>
+<%# なまえ：<%= current_user.name %>
+<%# </div> %>
+<%# <div class="card-body"> %>
+<%# <p class="card-text font font-size">きたじかん　： %>
+<%# <%= l @reception&.arrive, format: :short if @reception.present? %>
+<%# </p> %>
+<%# </div> %>
+<%# <div class="card-body"> %>
+<%# <p class="card-text font font-size">かえるじかん： %>
+<%# <%= l @reception.leave, format: :short if @reception.present? && @reception.leave.present? %>
+<%# </p> %>
+<%# </div> %>
+<%# </section> %>
+<%# </div> %>
+<div class="stitch-index bgc-pink font text-center mb-2">なまえ</div>
+<div class="mb-3 font text-center"><%= current_user.name %></div>
+<div class="stitch-index bgc-green font text-center mb-2">きたじかん</div>
+<div class="mb-3 font text-center"><%= l @reception&.arrive, format: :short if @reception.present? %></div>
+<div class="stitch-index bgc-blue font text-center mb-2">かえるじかん</div>
+<div class="mb-3 font text-center"><%= l @reception.leave, format: :short if @reception.present? && @reception.leave.present? %></div>
 <div>
   <% if @reception.nil? %>
     <div class="d-flex justify-content-center">

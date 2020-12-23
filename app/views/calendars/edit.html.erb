@@ -6,7 +6,7 @@
 <div class ="calendar mt-4 mb-3">
   <%= form_with url: calendars_path, method: :put, local: true do |form| %>
     <input id ="edit_calendar" type="text" name="calendar[date]" placeholder="利用日を選んでください" readonly="readonly" >
-    <%= form.submit "送信", class: "calendar-button calendar-submit px-5 font font-size px-3" %>
+    <%= form.submit "送信", class: "btn btn-block px-5 font font-size mt-3 calendar-button py-3" %>
   <% end %>
 </div>
 <%= render 'layouts/footer-menus' %>

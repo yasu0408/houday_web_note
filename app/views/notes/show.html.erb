@@ -1,4 +1,8 @@
-<h1 class="text-center font">連絡帳の詳細</h1>
+<div class="d-flex justify-content-center mb-4">
+  <div class="stitch font text-center mb-4 header-width">
+    連絡帳詳細
+  </div>
+</div>
 <table class="osare-table osare-hikaku col2t text-center">
   <thead>
     <tr>
@@ -37,9 +41,4 @@
         </tbody>
       </thead>
     </table>
-    <div class="d-flex justify-content-center">
-      <%= link_to "連絡帳編集", edit_note_path(@note), class: "btn btn-block btn-success w-75 mb-3" %>
-    </div>
-    <div class="d-flex justify-content-center">
-      <%= link_to "もどる", root_path, class: "btn btn-block btn-primary w-75" %>
-    </div>
+    <%= render 'layouts/footer-menus' %>
