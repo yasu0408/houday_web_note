@@ -186,3 +186,25 @@ footer {
 .pagination > li > a:hover {
   border-radius: 50% !important; /*角を丸くする*/
 }
+
+.modal-circle {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #569ff7;
+}
+
+.modal-circle span {
+  position: absolute;
+  display: inline-block;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 30px;
+  text-align: center;
+  color: #fff;
+  font-size: 0.7rem;
+}
