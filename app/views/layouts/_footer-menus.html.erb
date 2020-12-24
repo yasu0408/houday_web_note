@@ -1,29 +1,15 @@
 <div class="footer-menus d-flex justify-content-center align-items-center font font-size mt-4">
   <%= button_to "ホーム",{controller: 'homes', action: 'index'},{method: :get, class: "home-btn py-3 px-2"} %>
-  <%= button_to "もどる",{controller: 'homes', action: 'index'},{method: :get, class: "back-btn py-3 px-2"} %>
+  <%# button_to "もどる",{controller: 'homes', action: 'index'},{method: :get, class: "back-btn py-3 px-2"} %>
+  <%= button_to "もどる", :back, {method: :get, class: "back-btn py-3 px-2"} %>
   <button type="button" class="how-to-btn py-3 px-2 under" data-toggle="modal" data-target="#exampleModalCenter">
     使い方
   </button>
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalCenterTitle">受付機能の使い方</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          ①利用者が施設に到着したら【ついたよ】ボタンをタップ<br>
-          <br>
-          ②利用者が退所したら【かえるよ】ボタンをタップ<br>
-          <br>
-          ※受付を済ませると【今日の利用状況】から詳細が確認できます
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">とじる</button>
-        </div>
-      </div>
-    </div>
-  </div>
+  <%= render 'modal/reception-show-modal' if controller_name == 'receptions' && controller.action_name == 'show' %>
+  <%= render 'modal/reception-modal' if controller_name == 'receptions' %>
+  <%= render 'modal/calendar-modal' if controller_name == 'calendars' %>
+  <%= render 'modal/note-new-modal' if controller_name == 'notes' && controller.action_name == 'new' %>
+  <%= render 'modal/note-edit-modal' if controller_name == 'notes' && controller.action_name == 'edit' %>
+  <%= render 'modal/note-show-modal' if controller_name == 'notes' && controller.action_name == 'show' %>
+  <%= render 'modal/note-modal' if controller_name == 'notes' && controller.action_name == 'index'%>
 </div>
