@@ -96,15 +96,6 @@ footer {
   padding: 0;
 }
 
-// 連絡帳のindexページのボタン
-.btn-third {
-  width: 33.33333%;
-  /* 未対応ブラウザ用 */
-  width: -webkit-calc(100% / 3);
-  /* ベンダープレフィックス */
-  width: calc(100% / 3);
-}
-
 // フラッシュ設定
 .alert-notice {
   @extend .alert-success;
@@ -171,4 +162,27 @@ footer {
   border-radius: 15px;
   width: clamp(300px, 54vw, 450px);
   border: none;
+}
+
+.centering {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.pagination > li > a {
+  border: none !important; /*枠線をなくす*/
+  color: #696969 !important; /*文字の色を変える*/
+  width: 36px;
+  text-align: center;
+}
+
+/* 表示しているページ番号のデザイン */
+.pagination > .active > a {
+  background: #d6ebff !important; /*背景の色を変える*/
+  border-radius: 50% !important; /*角を丸くする*/
+}
+
+/*ホバー時のデザイン*/
+.pagination > li > a:hover {
+  border-radius: 50% !important; /*角を丸くする*/
 }
