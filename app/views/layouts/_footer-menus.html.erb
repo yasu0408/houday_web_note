@@ -5,11 +5,5 @@
   <button type="button" class="how-to-btn py-3 px-2 under" data-toggle="modal" data-target="#exampleModalCenter">
     使い方
   </button>
-  <%= render 'modal/reception-show-modal' if controller_name == 'receptions' && controller.action_name == 'show' %>
-  <%= render 'modal/reception-modal' if controller_name == 'receptions' %>
-  <%= render 'modal/calendar-modal' if controller_name == 'calendars' %>
-  <%= render 'modal/note-new-modal' if controller_name == 'notes' && controller.action_name == 'new' %>
-  <%= render 'modal/note-edit-modal' if controller_name == 'notes' && controller.action_name == 'edit' %>
-  <%= render 'modal/note-show-modal' if controller_name == 'notes' && controller.action_name == 'show' %>
-  <%= render 'modal/note-modal' if controller_name == 'notes' && controller.action_name == 'index'%>
+  <%= render "modals/#{controller_name}-#{action_name}-modal" %>
 </div>
