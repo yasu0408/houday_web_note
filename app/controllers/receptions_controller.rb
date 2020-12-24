@@ -6,10 +6,6 @@ class ReceptionsController < ApplicationController
   end
 
   def show
-    if @reception.nil?
-      flash[:alert] = "まだ本日の受付がありません。"
-      redirect_to root_path
-    end
   end
 
   def update

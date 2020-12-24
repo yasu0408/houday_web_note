@@ -18,9 +18,17 @@
 <div class="stitch-index bgc-pink font text-center mb-2">なまえ</div>
 <div class="mb-3 font text-center"><%= current_user.name %></div>
 <div class="stitch-index bgc-green font text-center mb-2">きたじかん</div>
-<div class="mb-3 font text-center"><%= l @reception&.arrive, format: :short if @reception.present? %></div>
+<% if @reception.present? %>
+  <div class="mb-3 font text-center"><%= l @reception&.arrive, format: :short %></div>
+<% else %>
+  <div class="text-center font py-2">　　　</div>
+<% end %>
 <div class="stitch-index bgc-blue font text-center mb-2">かえるじかん</div>
-<div class="mb-3 font text-center"><%= l @reception.leave, format: :short if @reception.present? && @reception.leave.present? %></div>
+<% if @reception.present? && @reception.leave.present? %>
+  <div class="mb-3 font text-center"><%= l @reception.leave, format: :short %></div>
+<% else %>
+  <div class="text-center font py-2">　　　</div>
+<% end %>
 <div>
   <% if @reception.nil? %>
     <div class="d-flex justify-content-center">

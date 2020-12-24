@@ -4,25 +4,32 @@
   </div>
 </div>
 <div class="stitch-index bgc-pink font text-center mb-2">利用日</div>
-<div class="mb-3 font text-center"><%=l @reception.arrive, format: :very_long %></div>
+<div class="mb-3 font text-center"><%= l Date.today, format: :long %></div>
 <div class="stitch-index bgc-org font text-center mb-2">利用状況</div>
 <div class="mb-3 font text-center">
-  <% if @reception.arrive.present? && @reception.leave.nil? %>
+  <% if @reception.nil? %>
+    利用予定あり
+  <% elsif @reception.arrive.present? && @reception.leave.nil? %>
     現在利用中
   <% elsif @reception.present? && @reception.leave.present? %>
     現在送迎中
   <% else %>
-    利用予定あり
   <% end %>
 </div>
 <div class="stitch-index bgc-green font text-center mb-2">来所時間</div>
-<div class="mb-3 font text-center"><%=l @reception.arrive, format: :long %></div>
+<div class="mb-3 font text-center">
+  <% if @reception.nil? %>
+    ---
+  <% else %>
+    <%=l @reception.arrive, format: :long %></div>
+<% end %>
 <div class="stitch-index bgc-blue font text-center mb-2">退所時間</div>
 <div class="mb-3 font text-center">
-  <% if @reception.leave.present? %>
+  <% if @reception.nil? %>
+    ---
+  <% elsif @reception.leave.present? %>
     <%=l @reception.leave, format: :long %>
   <% else %>
-    ---
   <% end %>
 </div>
 <%= render 'layouts/footer-menus' %>

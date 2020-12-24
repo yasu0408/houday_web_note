@@ -3,42 +3,14 @@
     連絡帳詳細
   </div>
 </div>
-<table class="osare-table osare-hikaku col2t text-center">
-  <thead>
-    <tr>
-      <th class="bgc-p">日付</th>
-      <th class="bgc-b">体調</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th><%= l @note.date %></th>
-      <td><%= @note.condition %></td>
-    </tr>
-  </tbody>
-  <table class="osare-table osare-hikaku col2t text-center mt-3">
-    <thead>
-      <tr>
-        <th class="bgc-y">機嫌</th>
-        <th class="bgc-g">体温</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="py-4"><%= @note.humor %></td>
-        <td class="py-4"><%= @note.temp %></td>
-      </tr>
-    </tbody>
-    <table class="osare-table osare-hikaku col1t text-center mt-3 mb-3">
-      <thead class="message-thead">
-        <tr>
-          <th class="bgc-gr">メッセージ</th>
-        </tr>
-        <tbody>
-          <tr>
-            <td class="py-5 text-left px-3"><%= @note.message %></td>
-          </tr>
-        </tbody>
-      </thead>
-    </table>
-    <%= render 'layouts/footer-menus' %>
+<div class="stitch-index bgc-pink font text-center mb-2">日付</div>
+<div class="mb-3 font text-center"><%= l @note.date %></div>
+<div class="stitch-index bgc-org font text-center mb-2">体調</div>
+<div class="mb-3 font text-center"><%= @note.condition %></div>
+<div class="stitch-index bgc-green font text-center mb-2">機嫌</div>
+<div class="mb-3 font text-center"><%= @note.humor %></div>
+<div class="stitch-index bgc-blue font text-center mb-2">体温</div>
+<div class="mb-3 font text-center"><%= @note.temp %>度</div>
+<div class="stitch-index bgc-grey font text-center mb-2">メッセージ</div>
+<div class="mb-3 font text-left format-width mx-auto bgc-grey"><%= @note.message %></div>
+<%= render 'layouts/footer-menus' %>
