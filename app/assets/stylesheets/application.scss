@@ -138,6 +138,8 @@ footer {
     border: none;
     width: clamp(100px, 18vw, 150px);
     outline: 0;
+    -webkit-appearance: none;
+    border-radius: 0;
   }
 
   .how-to-btn {
@@ -230,5 +232,5 @@ footer {
 }
 
 .space {
-  width: 100px;
+  width: 30px;
 }

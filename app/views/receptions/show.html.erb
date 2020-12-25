@@ -19,14 +19,14 @@
 <div class="stitch-index bgc-green font text-center mb-2">来所時間</div>
 <div class="mb-3 font text-center">
   <% if @reception.nil? %>
-    ---
+    <div class="text-center font py-2">---</div>
   <% else %>
     <%=l @reception.arrive, format: :long %></div>
 <% end %>
 <div class="stitch-index bgc-blue font text-center mb-2">退所時間</div>
 <div class="mb-3 font text-center">
   <% if @reception.nil? %>
-    ---
+    <div class="text-center font py-2">---</div>
   <% elsif @reception.leave.present? %>
     <%=l @reception.leave, format: :long %>
   <% else %>
