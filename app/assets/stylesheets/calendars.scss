@@ -18,7 +18,7 @@
   border-radius: 15px !important;
 }
 
-@mixin mini-circle($bgc: #fff, $color: #fff) {
+@mixin mini-circle($bgc, $color) {
   background-color: $bgc;
   color: $color;
   width: 30px;
