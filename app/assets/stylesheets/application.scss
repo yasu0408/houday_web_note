@@ -131,6 +131,9 @@ footer {
     border: none;
     width: clamp(100px, 18vw, 150px);
     outline: 0;
+    -webkit-appearance: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
   }
   .back-btn {
     background-color: #3b5998;
