@@ -3,7 +3,14 @@
     　月間利用日　
   </div>
 </div>
-<div class ="calendar mt-4 mb-3">
+<div class="d-flex justify-content-center align-items-center calendar-width m-auto">
+  <div class="modal-font">利用日なし</div>
+  <div class="modal-circle circle-font">日付</div>
+  <div class="space"></div>
+  <div class="modal-font">利用日あり</div>
+  <div class="modal-circle-selected circle-font">日付</div>
+</div>
+<div class ="calendar mb-3">
   <%= form_with url: calendars_path, method: :put, local: true do |form| %>
     <input id ="edit_calendar" type="text" name="calendar[date]" placeholder="利用日を選んでください" readonly="readonly" >
     <%= form.submit "送信", class: "btn btn-block px-5 font font-size mt-3 calendar-button py-3" %>
