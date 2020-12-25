@@ -1,109 +1,57 @@
-.osare-table {
-  width: 100%;
-  table-layout: fixed;
-  border: none !important;
-  border-collapse: separate;
-  border-spacing: 7px 0px;
+.format-width {
+  width: clamp(300px, 65%, 450px) !important ;
 }
 
-.osare-table th {
-  border: none !important;
-}
-
-.osare-table tbody td {
-  border: none !important;
-  background-color: #FFF9FF !important;
-  border-bottom: solid 2px #f9f9f9 !important;
-}
-
-/* ヘッダー */
-.osare-table thead th {
-  font-weight: bold;
-  border-radius: 10px 10px 0px 0px;
-}
-
-
-
-/* ボディ項目 */
-.osare-table tbody th {
-  background: #f2f5fc;
-  font-weight: bold;
-  border-bottom: solid 2px #f9f9f9 !important;
-  line-height: 4.5em;
-}
-
-/* ボディデータ */
-.osare-table tbody td {
-  text-align: center;
-}
-
-/* ヘッダー行　１列ごとの色変え */
-.osare-table thead th:nth-child(1) {
-  background: #81d4fa;
-}
-
-.osare-table thead th:nth-child(2) {
-  background: #FFBCFF;
-}
-
-.osare-table thead th:nth-child(3) {
-  background: #FFFFB2;
-}
-
-.osare-table thead th:nth-child(4) {
-  background: #C4FF89;
-}
-
-.osare-table thead th:nth-child(5) {
-  background: #FFB2D8;
-}
-
-/* 最終行のボーダーをなくす */
-.osare-table tbody tr:last-child th,
-.osare-table tbody tr:last-child td {
-  border-bottom: none !important;
-}
-
-
-
-/* スマホ調整 */
 @media (max-width: 767px) {
-
   .osare-table thead th,
   .osare-table tbody th {
     padding: 0;
   }
-
 }
 
+.btn-third {
+  width: 33.33333%;
 
+  width: -webkit-calc(100% / 3);
 
+  width: calc(100% / 3);
+}
+.notes-index-btn {
+  color: #333 !important;
+  width: clamp(95px, 31%, 145px) !important;
+  border-radius: 2px;
+}
 
+.pagination {
+  justify-content: center;
+}
 
-/*（共通）　項目の多いテーブルの幅を調整*/
-@media (max-width: 767px) {
+.pagination > li > a {
+  border: none !important;
+  color: #696969 !important;
+}
 
-  .col6t th,
-  .col6t td {
-    font-size: 0.4em;
-    padding: 10px 0px;
-  }
+.pagination > .active > a {
+  background: #93c9ff !important;
+  border-radius: 30px !important;
+}
 
-  .col5t th,
-  .col5t td {
-    font-size: 0.5em;
-    padding: 10px 0px;
-  }
+.pagination > li > a:hover {
+  border-radius: 30px !important ;
+}
 
-  .col4t th,
-  .col4t td {
-    font-size: 0.7em;
-    padding: 10px 5px;
-  }
+.pagination > li > a {
+  border: none !important;
+  color: #696969 !important;
+  width: 36px;
+  text-align: center;
+}
 
-  .col3t th,
-  .col3t td {
-    font-size: 0.8em;
-    padding: 10px 10px;
-  }
+.pagination > .active > a {
+  background: #d6ebff !important;
+  border-radius: 50% !important;
+}
+
+.pagination > li > a:hover {
+  border-radius: 50% !important;
 }

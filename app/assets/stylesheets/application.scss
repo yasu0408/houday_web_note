@@ -1,39 +1,170 @@
 /*
- *= require flatpickr
- *= require flatpickr/dist/themes/material_blue
- *= require_tree .
- *= require_self
- */
- .mw-md {
-   max-width: 576px;
- }
- .mw-xl {
-   max-width: 1200px;
- }
+*= require flatpickr
+*= require flatpickr/dist/themes/material_blue
+*= require_tree .
+*= require_self
+*/
+@import "bootstrap/scss/bootstrap";
 
- header {
-   overflow: hidden;
- }
+$fa-font-path: "@fortawesome/fontawesome-free/webfonts";
+@import "@fortawesome/fontawesome-free/scss/fontawesome";
+@import "@fortawesome/fontawesome-free/scss/regular";
 
- .dorpdown-toggler {
- 	border-color: rgba(0, 0, 0, 0);
- }
-
- @import "bootstrap/scss/bootstrap";
-
- $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
- @import "@fortawesome/fontawesome-free/scss/fontawesome";
- @import "@fortawesome/fontawesome-free/scss/regular";
-
-// 連絡帳のindexページのボタン
-.btn-third {
-  	width:33.33333%;
-  	/* 未対応ブラウザ用 */
-  	width:-webkit-calc(100% / 3);
-  	/* ベンダープレフィックス */
-  	width:calc(100% / 3);
+.mw-md {
+  max-width: 576px;
 }
 
+.mw-xl {
+  max-width: 1200px;
+}
 
+header {
+  overflow: hidden;
+}
 
+.navbar-brand {
+  font-size: clamp(12px, 3vw, 20px);
+}
 
+.navbar-light .navbar-toggler {
+  border-color: rgba(0, 0, 0, 0);
+}
+
+#nav {
+  list-style: none;
+  display: flex;
+  padding: 0 0 12px 0;
+  justify-content: center;
+  align-items: center;
+}
+
+#nav li {
+  width: 140px;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  margin-right: 2px;
+}
+
+#nav li a {
+  white-space: nowrap;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  padding: 20px;
+  font-size: clamp(12px, 3vw, 20px);
+}
+
+.wrapper {
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 105px;
+  box-sizing: border-box;
+}
+
+footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+@mixin blue-stitch($fSize) {
+  font-size: $fSize;
+  padding: 0.2em 0.5em;
+  margin: 1em 0 0.5em 0;
+  background: #d6ebff;
+  box-shadow: 0px 0px 0px 10px #d6ebff;
+  border: dashed 2px white;
+  color: black;
+}
+
+.stitch {
+  @include blue-stitch(15px);
+  height: 30px;
+  padding: 10px, 20px;
+  border-radius: 10px;
+}
+.stitch-blue {
+  @include blue-stitch(20px);
+}
+
+.stitch-blue p {
+  margin: 0;
+  padding: 0;
+}
+
+.alert-notice {
+  @extend .alert-success;
+}
+
+.alert-alert {
+  @extend .alert-danger;
+}
+
+.font {
+  font-family: "Hiragino Maru Gothic Pro", "ヒラギノ丸ゴ Pro W4", sans-serif;
+}
+.font-size {
+  font-size: clamp(12px, 3vw, 20px);
+}
+
+@media screen and (min-width: 768px) {
+  .br-sp {
+    display: none;
+  }
+}
+
+@mixin footer-btn($bgc) {
+  background: $bgc;
+  color: #ffffff;
+  border: none;
+  width: clamp(100px, 18vw, 150px);
+  outline: 0;
+  -webkit-appearance: none;
+}
+
+.footer-menus {
+  .home-btn {
+    @include footer-btn(#55acee);
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 0;
+  }
+  .back-btn {
+    @include footer-btn(#3b5998);
+    border-radius: 0;
+  }
+
+  .how-to-btn {
+    @include footer-btn(#eb4654);
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+}
+
+.line {
+  border-bottom: 3px dashed #ffffff;
+  padding-bottom: 5px;
+}
+
+.submit-button {
+  display: inline-block;
+  text-decoration: none;
+  background: #668ad8;
+  color: #fff;
+  border-radius: 15px;
+  width: clamp(300px, 54vw, 450px);
+  border: none;
+}
+.submit-button:hover,
+.submit-button:active {
+  color: #fff;
+  text-decoration: none;
+}
+
+.centering {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

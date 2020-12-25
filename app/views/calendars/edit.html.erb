@@ -1,15 +1,19 @@
 <div class="d-flex justify-content-center">
-  <div class="stitch font text-center mb-4 w-50">
-    月間利用日
+  <div class="stitch font text-center mb-4 header-width">
+    　月間利用日　
   </div>
 </div>
-<div class ="calendar">
+<div class="d-flex justify-content-center align-items-center calendar-width m-auto">
+  <div class="modal-font">利用日なし</div>
+  <div class="modal-circle circle-font">日付</div>
+  <div class="space"></div>
+  <div class="modal-font">利用日あり</div>
+  <div class="modal-circle-selected circle-font">日付</div>
+</div>
+<div class ="calendar mb-3">
   <%= form_with url: calendars_path, method: :put, local: true do |form| %>
     <input id ="edit_calendar" type="text" name="calendar[date]" placeholder="利用日を選んでください" readonly="readonly" >
-    <%= form.submit "送信", class: "btn btn-primary btn-block calendar-submit" %>
+    <%= form.submit "送信", class: "btn btn-block px-5 font font-size mt-3 calendar-button py-3" %>
   <% end %>
 </div>
-<%# gifファイルの貼り付け %>
-<%# <img src="/assets/sample_play.gif" id="guide-calendar"
-  onclick="this.setAttribute('src', this.getAttribute('src').replace(/assets/_play.gif/g, '.gif'));"
-  style="cursor: pointer;"> %>
+<%= render 'layouts/footer-menus' %>

@@ -18,6 +18,7 @@ class CalendarsController < ApplicationController
     end
     Calendar.import!(list)
 
+    flash[:notice] = "更新しました"
     redirect_to root_path
   end
 

@@ -1,29 +1,28 @@
-<div class="d-flex justify-content-center">
-  <section class="card border-dark mt-3 font w-50" >
-    <div class="card-header">
-      なまえ：<%= current_user.name %>
-    </div>
-    <div class="card-body">
-      <p class="card-text">きたじかん：
-        <%= l @reception&.arrive, format: :short if @reception.present? %>
-      </p>
-    </div>
-    <div class="card-body">
-      <p class="card-text">かえるじかん：
-        <%= l @reception.leave, format: :short if @reception.present? && @reception.leave.present? %>
-      </p>
-    </div>
-  </section>
-</div>
-<div class="d-flex justify-content-center">
-  <%= link_to "もどる", root_path, class: 'btn btn-primary mt-3 btn-block w-50' %>
-</div>
-<% if @reception.nil? %>
-  <div class="d-flex justify-content-center">
-    <%= link_to 'ついたよ', receptions_path, method: :patch, class: 'btn btn-success mt-3 btn-block w-50', remote: true %>
-  </div>
-<% elsif @reception.leave.nil? %>
-  <div class="d-flex justify-content-center">
-    <%= link_to 'かえるよ', receptions_path, method: :patch, class: 'btn btn-success mt-3 btn-block w-50', remote: true %>
-  </div>
+<div class="stitch-index bgc-pink font text-center mb-2">なまえ</div>
+<div class="mb-3 font text-center"><%= current_user.name %></div>
+<div class="stitch-index bgc-green font text-center mb-2">きたじかん</div>
+<% if @reception.present? %>
+  <div class="mb-3 font text-center"><%= l @reception.arrive, format: :short %></div>
+<% else %>
+  <div class="text-center font py-2">　　　</div>
 <% end %>
+<div class="stitch-index bgc-blue font text-center mb-2">かえるじかん</div>
+<% if @reception.present? && @reception.leave.present? %>
+  <div class="mb-3 font text-center"><%= l @reception.leave, format: :short %></div>
+<% else %>
+  <div class="text-center font py-2">　　　</div>
+<% end %>
+<div>
+  <% if @reception.nil? %>
+    <div class="d-flex justify-content-center">
+      <%= button_to "ついたよ",{controller: 'receptions', action: 'update'},{method: :patch, class: "button-text reception-button arrive-active mr-4", remote: true } %>
+      <%= button_to "かえるよ",{controller: 'receptions', action: 'update'},{method: :patch, class: "button-text reception-button btn-disable ml-4", disabled: true } %>
+    </div>
+  <% elsif @reception.leave.nil? %>
+    <div class="d-flex justify-content-center">
+      <%= button_to "ついたよ",{controller: 'receptions', action: 'update'},{method: :patch, class: "button-text reception-button mr-4 btn-disable", disabled: true } %>
+      <%= button_to "かえるよ",{controller: 'receptions', action: 'update'},{method: :patch, class: "button-text reception-button ml-4", remote: true } %>
+    </div>
+  <% else %>
+  <% end %>
+</div>

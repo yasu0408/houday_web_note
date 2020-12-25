@@ -1,40 +1,35 @@
 <div class="d-flex justify-content-center">
-  <div class="stitch font text-center mb-4 w-50">
-    今日の利用状況
+  <div class="stitch text-center mb-5 header-width">
+    　今日の利用状況　
   </div>
 </div>
-<table class="osare-table osare-hikaku col4t text-center">
-  <thead>
-    <tr>
-      <th>日付</th>
-      <th>来所時間</th>
-      <th>退所時間</th>
-      <th>利用の有無</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th><%=l @reception.arrive %></th>
-      <td><%=l @reception.arrive, format: :short %></td>
-      <td>
-        <% if @reception.leave.present? %>
-          <%=l @reception.leave, format: :short %>
-        <% else %>
-          ---
-        <% end %>
-      </td>
-      <td>
-        <% if @reception.arrive.present? && @reception.leave.nil? %>
-          現在利用中
-        <% elsif @reception.present? && @reception.leave.present? %>
-          現在送迎中
-        <% else %>
-          利用予定あり
-        <% end %>
-      </td>
-    </tr>
-  </tbody>
-</table>
-<div class="d-flex justify-content-center">
-  <%= link_to "もどる", root_path, class: "btn btn-block btn-primary mt-3 w-50" %>
+<div class="stitch-index bgc-pink font text-center mb-2">利用日</div>
+<div class="mb-3 font text-center"><%= l Date.today, format: :long %></div>
+<div class="stitch-index bgc-org font text-center mb-2">利用状況</div>
+<div class="mb-3 font text-center">
+  <% if @reception.nil? %>
+    利用予定あり
+  <% elsif @reception.arrive.present? && @reception.leave.nil? %>
+    現在利用中
+  <% elsif @reception.present? && @reception.leave.present? %>
+    現在送迎中
+  <% else %>
+  <% end %>
 </div>
+<div class="stitch-index bgc-green font text-center mb-2">来所時間</div>
+<div class="mb-3 font text-center">
+  <% if @reception.nil? %>
+    <div class="text-center font py-2">---</div>
+  <% else %>
+    <%=l @reception.arrive, format: :long %></div>
+<% end %>
+<div class="stitch-index bgc-blue font text-center mb-2">退所時間</div>
+<div class="mb-3 font text-center">
+  <% if @reception.nil? %>
+    <div class="text-center font py-2">---</div>
+  <% elsif @reception.leave.present? %>
+    <%=l @reception.leave, format: :long %>
+  <% else %>
+  <% end %>
+</div>
+<%= render 'layouts/footer-menus' %>

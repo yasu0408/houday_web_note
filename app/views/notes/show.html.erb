@@ -1,36 +1,16 @@
-<h1 class="text-center font">連絡帳の詳細</h1>
-<table class="osare-table osare-hikaku col4t text-center">
-  <thead>
-    <tr>
-      <th>日付</th>
-      <th>体調</th>
-      <th>機嫌</th>
-      <th>体温</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th><%= l @note.date %></th>
-      <td><%= @note.condition %></td>
-      <td><%= @note.humor %></td>
-      <td><%= @note.temp %></td>
-    </tr>
-  </tbody>
-  <table class="osare-table osare-hikaku col1t text-center mt-3 mb-3">
-    <thead class="message-thead">
-      <tr>
-        <th>メッセージ</th>
-      </tr>
-      <tbody>
-        <tr>
-          <td><%= @note.message %></td>
-        </tr>
-      </tbody>
-    </thead>
-  </table>
-  <div class="d-flex justify-content-center">
-    <%= link_to "連絡帳編集", edit_note_path(@note), class: "btn btn-block btn-success w-50 mb-3" %>
+<div class="d-flex justify-content-center mb-4">
+  <div class="stitch font text-center mb-4 header-width">
+    連絡帳詳細
   </div>
-  <div class="d-flex justify-content-center">
-    <%= link_to "連絡帳一覧へ", notes_path, class: "btn btn-block btn-primary w-50" %>
-  </div>
+</div>
+<div class="stitch-index bgc-pink font text-center mb-2">日付</div>
+<div class="mb-3 font text-center"><%= l @note.date %></div>
+<div class="stitch-index bgc-org font text-center mb-2">体調</div>
+<div class="mb-3 font text-center"><%= @note.condition %></div>
+<div class="stitch-index bgc-green font text-center mb-2">機嫌</div>
+<div class="mb-3 font text-center"><%= @note.humor %></div>
+<div class="stitch-index bgc-blue font text-center mb-2">体温</div>
+<div class="mb-3 font text-center"><%= @note.temp %>度</div>
+<div class="stitch-index bgc-grey font text-center mb-2">メッセージ</div>
+<div class="mb-3 font text-left format-width mx-auto bgc-grey"><%= @note.message %></div>
+<%= render 'layouts/footer-menus' %>

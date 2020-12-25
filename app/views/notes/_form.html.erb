@@ -1,13 +1,4 @@
-<h3 class="text-center">【今日の日付】 <%= l Date.current, format: :long %></h3>
-<%= form_with model: @note, local: true do |f| %>
-  <div class="form-group">
-    <%= f.label :date %>
-    <% if controller.controller_name == 'notes' && controller.action_name == 'edit' %>
-      <%= f.date_field :date, value: @note.date, class: "form-control" %>
-    <% else %>
-      <%= f.date_field :date, value: Date.current, class: "form-control" %>
-    <% end %>
-  </div>
+<%= form_with model: @note, class: "header-width mx-auto", local: true do |f| %>
   <div>
     <%= f.label :condition %>
     <%= f.select :condition, Note::CONDITION, {}, { value: "ふつう", class: "custom-select"} %>
@@ -22,10 +13,10 @@
   </div>
   <div class="form-group">
     <%= f.label :message %>
-    <%= f.text_field :message, value: @note.message, class: "form-control" %>
+    <%= f.text_area :message, value: @note.message, class: "form-control", maxlength: "300" %>
     <small id="messageHelp" class="form-text text-muted">おこさまの様子や気になることがあればご記入ください</small>
   </div>
   <div class="d-flex justify-content-center">
-    <%= f.submit "送信", class: "btn btn-primary btn-block w-50" %>
+    <%= f.submit "送信", class: "submit-button text-center py-3 px-2 font font-size" %>
   </div>
 <% end %>

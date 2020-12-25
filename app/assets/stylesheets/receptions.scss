@@ -1,0 +1,58 @@
+.header-width {
+  width: clamp(280px, 55vw, 430px);
+}
+
+@mixin index-color($bgc) {
+  background-color: $bgc;
+  box-shadow: 0 0 0 2px #fff0f5, 2px 1px 6px 2px rgba(10, 10, 0, 0.5);
+}
+.bgc-pink {
+  @include index-color(#fff0f5);
+}
+.bgc-org {
+  @include index-color(#fdf5e6);
+}
+.bgc-green {
+  @include index-color(#f0fff0);
+}
+.bgc-blue {
+  @include index-color(#f0ffff);
+}
+
+.bgc-grey {
+  background-color: #dcdcdc;
+  box-shadow: 0 0 0 2px #dcdcdc, 2px 1px 6px 2px rgba(10, 10, 0, 0.5);
+}
+.stitch-index {
+  padding: 4px 10px;
+  margin-bottom: 1em;
+  color: #333;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.3em;
+  border: 1px dashed #fff;
+  border-radius: 2px;
+  text-shadow: 1px 1px #fff;
+  font-weight: normal;
+  width: clamp(175px, 33vw, 225px);
+  margin: 0 auto;
+}
+
+.reception-button {
+  display: flex;
+  border: none;
+  justify-content: center;
+  align-items: center;
+  width: clamp(60px, 15vw, 130px);
+  height: clamp(60px, 15vw, 130px);
+  font-size: clamp(12px, 3vw, 20px);
+  background-color: #668ad8;
+  border-radius: 50%;
+  white-space: nowrap;
+  font-family: "Hiragino Maru Gothic Pro", "ヒラギノ丸ゴ Pro W4", sans-serif;
+  font-weight: bold;
+  color: #ffffff;
+}
+.btn-disable {
+  background-color: #cccccc !important;
+}

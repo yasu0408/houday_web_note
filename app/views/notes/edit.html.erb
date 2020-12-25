@@ -1,5 +1,8 @@
-<h1 class="text-center">連絡帳の編集</h1>
-<%= render "form" %>
 <div class="d-flex justify-content-center">
-  <%= link_to "連絡帳一覧へ", notes_path, class: "btn btn-block btn-success mt-3 w-50" %>
+  <div class="stitch font text-center mb-4 header-width">
+    連絡帳編集
+  </div>
 </div>
+<h3 class="text-center font font-size">【変更日の日付】 <%=l @note.date, format: :long %></h3>
+<%= render "form" %>
+<%= render 'layouts/footer-menus' %>

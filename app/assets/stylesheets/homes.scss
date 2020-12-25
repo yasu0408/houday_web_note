@@ -1,46 +1,36 @@
-// Place all the styles related to the homes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
 .button-container {
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  height: 20vh;
+  height: clamp(100px, 17vh, 200px);
   background: grey;
   color: #fff;
-  padding: 20px;
+  padding: 3px;
   font-size: 22px;
-  background: #FEA993;
-  border: 2px dashed #F7F9CC;
+  background: #fea993;
+  border: 2px dashed #f7f9cc;
   border-radius: 10px;
-  box-shadow: 0 0 0 7px #FEA993;
-  
+  box-shadow: 0 0 0 7px #fea993;
 }
 
 .index-button {
   display: flex;
+  border: none;
   justify-content: center;
   align-items: center;
-  width: clamp(60px, 15vw, 150px);
-  height: clamp(60px,15vw, 150px);
+  width: clamp(60px, 14vw, 120px);
+  height: clamp(60px, 14vw, 120px);
   font-size: clamp(12px, 3vw, 20px);
-  background-color:#F7F9CC;
+  background-color: #f7f9cc;
   border-radius: 50%;
   white-space: nowrap;
-  font-family: 'Hiragino Maru Gothic Pro',
-  'ヒラギノ丸ゴ Pro W4',
-  sans-serif;
+  font-family: "Hiragino Maru Gothic Pro", "ヒラギノ丸ゴ Pro W4", sans-serif;
   font-weight: bold;
-  color: #FEA993;
+  color: #fea993;
+  outline: 0;
 }
 
 .button-text {
-  color: #FEA993;
-}
-
-.font {
-  font-family: 'Hiragino Maru Gothic Pro',
-'ヒラギノ丸ゴ Pro W4',
-sans-serif;
+  color: #fea993;
 }
