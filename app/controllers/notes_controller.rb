@@ -9,7 +9,6 @@ class NotesController < ApplicationController
 
   def new
     if current_user.notes.find_by(date: Date.today)
-      # binding.pry
       redirect_to edit_note_path(id: current_user.notes.last.id), alert: "すでに本日の連絡帳が存在します"
     elsif current_user.calendars.find_by(date: Date.today)
       @note = Note.new(temp: 36.5, message: "よろしくおねがいします。")
@@ -25,7 +24,6 @@ class NotesController < ApplicationController
       # current_user.notes.create!(note_params)
       redirect_to note_path(@note), notice: "投稿しました"
     else
-      binding.pry
       redirect_to root_path, alert: "すでに同日の連絡帳が存在します"
     end
   end

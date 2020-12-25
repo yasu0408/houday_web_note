@@ -12,18 +12,43 @@
   display: none;
 }
 
-.stitch {
-  color: #fff;
-  padding: 10px, 20px;
-  font-size: 22px;
-  background: #fea993;
-  border: 2px dashed #f7f9cc;
-  border-radius: 10px;
-  box-shadow: 0 0 0 7px #fea993;
-}
-
 .calendar-button {
   background: cornflowerblue !important;
   color: white !important;
   border-radius: 15px !important;
+}
+
+@mixin mini-circle($bgc: #fff, $color: #fff) {
+  background-color: $bgc;
+  color: $color;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 12px;
+}
+.modal-circle-selected {
+  @include mini-circle(#42a5f5, #fff);
+}
+
+.modal-circle {
+  @include mini-circle(#fff, black);
+  border: dashed 1px black;
+}
+
+.modal-font {
+  font-size: 12px;
+}
+
+.circle-font {
+  font-size: 5px;
+}
+
+.calendar-width {
+  width: 308px;
+}
+
+.space {
+  width: 30px;
 }

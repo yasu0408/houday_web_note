@@ -18,8 +18,6 @@ $fa-font-path: "@fortawesome/fontawesome-free/webfonts";
   max-width: 1200px;
 }
 
-// ↓ヘッダーcss
-
 header {
   overflow: hidden;
 }
@@ -56,8 +54,7 @@ header {
   padding: 20px;
   font-size: clamp(12px, 3vw, 20px);
 }
-//  ↑ここまでヘッダー
-// ↓フッター
+
 .wrapper {
   min-height: 100vh;
   position: relative;
@@ -71,24 +68,24 @@ footer {
   bottom: 0;
 }
 
-// ステッチ設定
-.stitch {
-  font-size: 15px;
-  color: black;
+@mixin blue-stitch($fSize: 20px) {
+  font-size: $fSize;
   padding: 0.2em 0.5em;
   margin: 1em 0 0.5em 0;
   background: #d6ebff;
   box-shadow: 0px 0px 0px 10px #d6ebff;
   border: dashed 2px white;
+  color: black;
+}
+
+.stitch {
+  @include blue-stitch(15px);
   height: 30px;
+  padding: 10px, 20px;
+  border-radius: 10px;
 }
 .stitch-blue {
-  font-size: 20px;
-  padding: 0.2em 0.5em;
-  margin: 1em 0 0.5em 0;
-  background: #d6ebff;
-  box-shadow: 0px 0px 0px 10px #d6ebff;
-  border: dashed 2px white;
+  @include blue-stitch();
 }
 
 .stitch-blue p {
@@ -96,7 +93,6 @@ footer {
   padding: 0;
 }
 
-// フラッシュ設定
 .alert-notice {
   @extend .alert-success;
 }
@@ -104,7 +100,7 @@ footer {
 .alert-alert {
   @extend .alert-danger;
 }
-// フォント設定
+
 .font {
   font-family: "Hiragino Maru Gothic Pro", "ヒラギノ丸ゴ Pro W4", sans-serif;
 }
@@ -118,41 +114,32 @@ footer {
   }
 }
 
-.pagination {
-  justify-content: center;
+@mixin footer-btn($bgc: #55acee) {
+  background: $bgc;
+  color: #ffffff;
+  border: none;
+  width: clamp(100px, 18vw, 150px);
+  outline: 0;
+  -webkit-appearance: none;
 }
 
 .footer-menus {
   .home-btn {
-    background-color: #55acee;
-    color: #ffffff;
-    border-top-left-radius: 15px;
+    @include footer-btn();
     border-bottom-left-radius: 15px;
-    border: none;
-    width: clamp(100px, 18vw, 150px);
-    outline: 0;
-    -webkit-appearance: none;
     border-top-right-radius: 0;
+    border-top-left-radius: 15px;
     border-bottom-right-radius: 0;
   }
   .back-btn {
-    background-color: #3b5998;
-    color: #ffffff;
-    border: none;
-    width: clamp(100px, 18vw, 150px);
-    outline: 0;
-    -webkit-appearance: none;
+    @include footer-btn(#3b5998);
     border-radius: 0;
   }
 
   .how-to-btn {
-    background-color: #eb4654;
-    color: #ffffff;
+    @include footer-btn(#eb4654);
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    border: none;
-    width: clamp(100px, 18vw, 150px);
-    outline: 0;
   }
 }
 
@@ -180,64 +167,4 @@ footer {
   display: flex;
   justify-content: space-around;
   align-items: center;
-}
-.pagination > li > a {
-  border: none !important; /*枠線をなくす*/
-  color: #696969 !important; /*文字の色を変える*/
-  width: 36px;
-  text-align: center;
-}
-
-/* 表示しているページ番号のデザイン */
-.pagination > .active > a {
-  background: #d6ebff !important; /*背景の色を変える*/
-  border-radius: 50% !important; /*角を丸くする*/
-}
-
-/*ホバー時のデザイン*/
-.pagination > li > a:hover {
-  border-radius: 50% !important; /*角を丸くする*/
-}
-
-.modal-circle-selected {
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
-  background-color: #42a5f5;
-  border-radius: 50%;
-  color: #fff;
-  text-align: center;
-  font-size: 12px;
-}
-
-.modal-circle {
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
-  background-color: #fff;
-  border: dashed 1px black;
-  border-radius: 50%;
-  color: black;
-  text-align: center;
-  font-size: 12px;
-}
-
-.modal-font {
-  font-size: 12px;
-}
-
-.circle-font {
-  font-size: 5px;
-}
-
-.calendar-width {
-  width: 308px;
-}
-
-.space {
-  width: 30px;
-}
-
-.flatpickr-current-month .flatpickr-monthDropdown-months {
-  background: #42a5f5 !important;
 }

@@ -2,19 +2,18 @@
   width: clamp(300px, 65%, 450px) !important ;
 }
 
-/* スマホ調整 */
 @media (max-width: 767px) {
   .osare-table thead th,
   .osare-table tbody th {
     padding: 0;
   }
 }
-// 連絡帳のindexページのボタン
+
 .btn-third {
   width: 33.33333%;
-  /* 未対応ブラウザ用 */
+
   width: -webkit-calc(100% / 3);
-  /* ベンダープレフィックス */
+
   width: calc(100% / 3);
 }
 .notes-index-btn {
@@ -23,18 +22,36 @@
   border-radius: 2px;
 }
 
+.pagination {
+  justify-content: center;
+}
+
 .pagination > li > a {
-  border: none !important; /*枠線をなくす*/
-  color: #696969 !important; /*文字の色を変える*/
+  border: none !important;
+  color: #696969 !important;
 }
 
-/* 表示しているページ番号のデザイン */
 .pagination > .active > a {
-  background: #93c9ff !important; /*背景の色を変える*/
-  border-radius: 30px !important; /*角を丸くする*/
+  background: #93c9ff !important;
+  border-radius: 30px !important;
 }
 
-/*ホバー時のデザイン*/
 .pagination > li > a:hover {
-  border-radius: 30px !important ; /*角を丸くする*/
+  border-radius: 30px !important ;
+}
+
+.pagination > li > a {
+  border: none !important;
+  color: #696969 !important;
+  width: 36px;
+  text-align: center;
+}
+
+.pagination > .active > a {
+  background: #d6ebff !important;
+  border-radius: 50% !important;
+}
+
+.pagination > li > a:hover {
+  border-radius: 50% !important;
 }

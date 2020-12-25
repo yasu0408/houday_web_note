@@ -2,7 +2,7 @@
 <div class="mb-3 font text-center"><%= current_user.name %></div>
 <div class="stitch-index bgc-green font text-center mb-2">きたじかん</div>
 <% if @reception.present? %>
-  <div class="mb-3 font text-center"><%= l @reception&.arrive, format: :short %></div>
+  <div class="mb-3 font text-center"><%= l @reception.arrive, format: :short %></div>
 <% else %>
   <div class="text-center font py-2">　　　</div>
 <% end %>
