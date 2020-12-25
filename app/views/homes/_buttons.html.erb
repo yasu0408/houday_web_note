@@ -2,7 +2,7 @@
   <div class="button-container">
     <%= button_to "うけつけ",{controller: 'receptions', action: 'edit'},{method: :get, class: "button-text index-button"} %>
     <%= button_to "連絡帳",{controller: 'notes', action: 'index'},{method: :get, class: "button-text index-button"} %>
-    <%= button_to "月間利用日",{controller: 'calendars', action: 'edit'},{method: :get, class: "button-text index-button"} %>
+    <%= button_to "月間利用",{controller: 'calendars', action: 'edit'},{method: :get, class: "button-text index-button"} %>
     <%= button_to receptions_path, method: :get, class: "button-text index-button" do %>
       今日の<br>
       利用状況

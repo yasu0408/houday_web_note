@@ -1,10 +1,10 @@
 .calendar {
   display: flex;
   justify-content: center;
-  text-align: center;
+  align-items: center;
 }
 
-.calendar-submit {
+.mt-40 {
   margin-top: 40px;
 }
 
@@ -12,28 +12,43 @@
   display: none;
 }
 
-.stitch {
-  color: #fff;
-  padding: 10px, 20px;
-  font-size: 22px;
-  background: #fea993;
-  border: 2px dashed #f7f9cc;
-  border-radius: 10px;
-  box-shadow: 0 0 0 7px #fea993;
-}
-
 .calendar-button {
-  display: inline-block;
-  padding: 0.5em 1em;
-  text-decoration: none;
-  background: #668ad8;
-  color: #fff;
-  border-radius: 15px;
-  box-shadow: 0px 0px 0px 5px #668ad8;
-  border: dashed 2px #fff;
-  width: 307px;
+  background: cornflowerblue !important;
+  color: white !important;
+  border-radius: 15px !important;
 }
 
-.calendar-button:hover {
-  border: dotted 1px #fff;
+@mixin mini-circle($bgc, $color) {
+  background-color: $bgc;
+  color: $color;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 12px;
+}
+.modal-circle-selected {
+  @include mini-circle(#42a5f5, #fff);
+}
+
+.modal-circle {
+  @include mini-circle(#fff, black);
+  border: dashed 1px black;
+}
+
+.modal-font {
+  font-size: 12px;
+}
+
+.circle-font {
+  font-size: 5px;
+}
+
+.calendar-width {
+  width: 308px;
+}
+
+.space {
+  width: 30px;
 }
