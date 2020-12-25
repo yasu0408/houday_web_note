@@ -6,7 +6,7 @@
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  height: clamp(130px, 17vh, 250px);
+  height: clamp(100px, 17vh, 200px);
   background: grey;
   color: #fff;
   padding: 3px;
@@ -22,8 +22,8 @@
   border: none;
   justify-content: center;
   align-items: center;
-  width: clamp(60px, 15vw, 130px);
-  height: clamp(60px, 15vw, 130px);
+  width: clamp(60px, 14vw, 120px);
+  height: clamp(60px, 14vw, 120px);
   font-size: clamp(12px, 3vw, 20px);
   background-color: #f7f9cc;
   border-radius: 50%;
@@ -31,6 +31,7 @@
   font-family: "Hiragino Maru Gothic Pro", "ヒラギノ丸ゴ Pro W4", sans-serif;
   font-weight: bold;
   color: #fea993;
+  outline: 0;
 }
 
 .button-text {

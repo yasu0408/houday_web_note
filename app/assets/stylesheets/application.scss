@@ -123,30 +123,32 @@ footer {
 }
 
 .footer-menus {
-}
+  .home-btn {
+    background-color: #55acee;
+    color: #ffffff;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border: none;
+    width: clamp(100px, 18vw, 150px);
+    outline: 0;
+  }
+  .back-btn {
+    background-color: #3b5998;
+    color: #ffffff;
+    border: none;
+    width: clamp(100px, 18vw, 150px);
+    outline: 0;
+  }
 
-.home-btn {
-  background-color: #55acee;
-  color: #ffffff;
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
-  border: none;
-  width: clamp(100px, 18vw, 150px);
-}
-.back-btn {
-  background-color: #3b5998;
-  color: #ffffff;
-  border: none;
-  width: clamp(100px, 18vw, 150px);
-}
-
-.how-to-btn {
-  background-color: #eb4654;
-  color: #ffffff;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  border: none;
-  width: clamp(100px, 18vw, 150px);
+  .how-to-btn {
+    background-color: #eb4654;
+    color: #ffffff;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border: none;
+    width: clamp(100px, 18vw, 150px);
+    outline: 0;
+  }
 }
 
 .line {
@@ -162,6 +164,11 @@ footer {
   border-radius: 15px;
   width: clamp(300px, 54vw, 450px);
   border: none;
+}
+.submit-button:hover,
+.submit-button:active {
+  color: #fff;
+  text-decoration: none;
 }
 
 .centering {
@@ -187,24 +194,28 @@ footer {
   border-radius: 50% !important; /*角を丸くする*/
 }
 
-.modal-circle {
-  position: relative;
-  display: inline-block;
+.modal-circle-selected {
   width: 30px;
   height: 30px;
+  line-height: 30px;
+  background-color: #42a5f5;
   border-radius: 50%;
-  background: #569ff7;
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
 }
 
-.modal-circle span {
-  position: absolute;
-  display: inline-block;
-  left: 0;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
+.modal-circle {
   width: 30px;
+  height: 30px;
+  line-height: 30px;
+  background-color: #dcdcdc;
+  border-radius: 50%;
+  color: black;
   text-align: center;
-  color: #fff;
-  font-size: 0.7rem;
+  font-size: 12px;
+}
+
+.modal-font {
+  font-size: 12px;
 }
