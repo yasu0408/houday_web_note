@@ -7,6 +7,8 @@ class CalendarsController < ApplicationController
   end
 
   def update
+    # binding.pry
+
     submitted_dates = params[:calendar][:date].split(" ").map(&:to_date) & EDITABLE_DATES.to_a
 
     delete_dates = current_user.calendars.pluck(:date) - submitted_dates
