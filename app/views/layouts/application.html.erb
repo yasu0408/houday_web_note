@@ -25,6 +25,10 @@
       <div class="container-fluid <%= devise_controller? ? 'mw-md' : 'mw-xl' %>">
         <%= yield %>
       </div>
+      <% if controller_name == 'homes' %>
+      <% else %>
+        <%= render 'layouts/footer-menus' %>
+      <% end %>
       <%= render 'layouts/footer' %>
     </div>
   </body>
