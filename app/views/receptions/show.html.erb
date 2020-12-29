@@ -23,6 +23,7 @@
   <% else %>
     <%=l @reception.arrive, format: :long %></div>
 <% end %>
+</div>
 <div class="stitch-index bgc-blue font text-center mb-2">退所時間</div>
 <div class="mb-3 font text-center">
   <% if @reception.nil? %>
@@ -32,4 +33,3 @@
   <% else %>
   <% end %>
 </div>
-<%= render 'layouts/footer-menus' %>
